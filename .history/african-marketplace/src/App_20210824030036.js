@@ -7,10 +7,9 @@ import AboutPage from "./page/about";
 import ProductPage from "./page/product";
 import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
-import Specific_Product from "./page/specific_product";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <header>
@@ -34,9 +33,8 @@ function App(props) {
             <Route path="/Contact">
               <ContactPage />
             </Route>
-            <Route path="product/:id">
-              <Specific_Product />
-            </Route>
+            <
+
             <Route>
               <Page404 />
             </Route>

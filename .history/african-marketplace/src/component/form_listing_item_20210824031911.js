@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Form_Item from "../component/form_item";
 
 export default function Form_Listing_Item(props) {
-
+  const [productID, set_productID] = useState(null);
 
   return (
     <div>

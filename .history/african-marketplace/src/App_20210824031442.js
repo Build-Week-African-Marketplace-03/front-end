@@ -9,8 +9,9 @@ import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
 import Specific_Product from "./page/specific_product";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <header>
@@ -33,9 +34,6 @@ function App(props) {
             </Route>
             <Route path="/Contact">
               <ContactPage />
-            </Route>
-            <Route path="product/:id">
-              <Specific_Product />
             </Route>
             <Route>
               <Page404 />

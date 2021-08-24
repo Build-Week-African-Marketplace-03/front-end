@@ -9,8 +9,11 @@ import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
 import Specific_Product from "./page/specific_product";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import 
 
-function App(props) {
+function App() {
+  const [productID, set_ProductID] = useState(null);
+
   return (
     <div className="App">
       <header>
@@ -34,7 +37,7 @@ function App(props) {
             <Route path="/Contact">
               <ContactPage />
             </Route>
-            <Route path="product/:id">
+            <Route path="/product/:id">
               <Specific_Product />
             </Route>
             <Route>
