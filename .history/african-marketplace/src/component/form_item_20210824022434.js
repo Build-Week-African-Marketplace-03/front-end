@@ -5,7 +5,7 @@ export default function Form_Item(props) {
     //props.input_cb_set_modifiedItem
 
     const { value, name } = event.target;
-    // console.log(`name = ${name}, value = ${value}, `);
+    console.log(`name = ${name}, value = ${value}, `);
 
     props.input_object[name] = value;
 

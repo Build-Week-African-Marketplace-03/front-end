@@ -14,9 +14,8 @@ export default function ProductPage(props) {
   const cb_get_new_object = () => {
     if (stateItem) {
       const temp_object = stateItem;
-      //add a new key pair value
       temp_object["id"] = stateCounter;
-      //increase stateCounter by one increment
+      //increase stateCounter by one incremen
       set_stateCounter(stateCounter + 1);
       return temp_object;
     }

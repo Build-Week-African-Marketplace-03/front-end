@@ -4,47 +4,36 @@ import Form_Add_Item from "../component/form_add_item";
 import { sample_items } from "../component/constant";
 export default function ProductPage(props) {
   const [stateItem, set_stateItem] = useState(null);
-  const [stateModifiedItem, set_modifiedItem] = useState(null);
+  const [modifiedItem, set_modifiedItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
   const [stateCounter, set_stateCounter] = useState(1);
 
-  /**
-   * cb_get_new_object add a key pair value to an object
-   */
   const cb_get_new_object = () => {
     if (stateItem) {
       const temp_object = stateItem;
-      //add a new key pair value
       temp_object["id"] = stateCounter;
-      //increase stateCounter by one increment
       set_stateCounter(stateCounter + 1);
       return temp_object;
     }
   };
 
   /**
-   * below useEffect track the modifiedItem
-   * .....the modified item is an item in the form_listing_items, this allow user to edit an existing item on the list
+   * 
    */
   useEffect(() => {
-    if (stateModifiedItem) {
-      console.log("product.js, modifiedItem = ", stateModifiedItem);
+    if (modifiedItem) {
+      console.log("product.js, modifiedItem = ", modifiedItem);
       const temp_array = stateArrayItems;
       for (let index = 0; index < Array.from(temp_array); index++) {
-        if ((temp_array[index].id = stateModifiedItem.id)) {
-          temp_array[index] = stateModifiedItem;
+        if ((temp_array[index].id = modifiedItem.id)) {
+          temp_array[index] = modifiedItem;
           break;
         }
       }
       set_modifiedItem(null);
     }
-  }, [stateModifiedItem]);
+  }, [modifiedItem]);
 
-  /**
-   * below useEffect track the state of a stateItem in form_add_items
-   * .....when a new item get added, this effect will trigger
-   * .....an insertion of a new object into stateArrayItems
-   */
   useEffect(
     () => {
       if (stateItem) {
