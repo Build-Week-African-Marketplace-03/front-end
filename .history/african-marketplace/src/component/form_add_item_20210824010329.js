@@ -15,12 +15,10 @@ export default function Form_Add_Item(props) {
   const schema = yup.object().shape({
     input_text_name: yup.string().required("Text Required"),
     input_number_quantity: yup
-      .number("must contain a number between 1 and 1000")
-      .required("must contain a number between 1 and 1000")
-      .typeError("must contain a number between 1 and 1000")
-      .min(1, "min number is 1")
-      .max(1000, "max number is 1000"),
-
+      .number()
+      .min(1, "min")
+      .max(1000)
+      .required("Type in a positive number"),
     input_text_description: yup.string().required("Text Required"),
     input_text_commodity_category: yup.string().required("Text Required"),
     input_text_sub_category: yup.string().required("Text Required"),
@@ -88,8 +86,7 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_name}
           type="text"
         />
-        <br />
-        <p>{stateError.input_text_name}</p>
+        <span>{stateError.input_text_name}</span>
       </label>
       <label>
         Quanity:
@@ -101,8 +98,7 @@ export default function Form_Add_Item(props) {
           type="number"
           min="1"
         />
-        <br />
-        <p>{stateError.input_number_quantity}</p>
+        <span>{stateError.input_number_quantity}</span>
       </label>
       <label>
         Description:
@@ -113,8 +109,7 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_description}
           type="text"
         />
-        <br />
-        <p>{stateError.input_text_description}</p>
+        <span>{stateError.input_text_description}</span>
       </label>
       <label>
         Commodity Category:
@@ -125,8 +120,7 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_commodity_category}
           type="text"
         />
-        <br />
-        <p>{stateError.input_text_commodity_category}</p>
+        <span>{stateError.input_text_commodity_category}</span>
       </label>
       <label>
         Sub-Category:
@@ -137,8 +131,7 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_sub_category}
           type="text"
         />
-        <br />
-        <p>{stateError.input_text_sub_category}</p>
+        <span>{stateError.input_text_sub_category}</span>
       </label>
       <label>
         Commodity Product:
@@ -149,8 +142,7 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_commodity_product}
           type="text"
         />
-        <br />
-        <p>{stateError.input_text_commodity_product}</p>
+        <span>{stateError.input_text_commodity_product}</span>
       </label>
       <button disabled={stateDisabled}>Submit</button>
     </form>

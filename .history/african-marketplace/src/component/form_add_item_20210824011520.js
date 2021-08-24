@@ -78,7 +78,7 @@ export default function Form_Add_Item(props) {
 
   //--------------------------return statement----------------------------------
   return (
-    <form class="flex-column" onSubmit={cb_onSubmit}>
+    <form class="flex-row" onSubmit={cb_onSubmit}>
       <label>
         Name:
         <input

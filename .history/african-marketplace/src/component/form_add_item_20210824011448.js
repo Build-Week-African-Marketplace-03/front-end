@@ -114,7 +114,7 @@ export default function Form_Add_Item(props) {
           type="text"
         />
         <br />
-        <p>{stateError.input_text_description}</p>
+        <span>{stateError.input_text_description}</span>
       </label>
       <label>
         Commodity Category:
@@ -126,7 +126,7 @@ export default function Form_Add_Item(props) {
           type="text"
         />
         <br />
-        <p>{stateError.input_text_commodity_category}</p>
+        <span>{stateError.input_text_commodity_category}</span>
       </label>
       <label>
         Sub-Category:
@@ -138,7 +138,7 @@ export default function Form_Add_Item(props) {
           type="text"
         />
         <br />
-        <p>{stateError.input_text_sub_category}</p>
+        <span>{stateError.input_text_sub_category}</span>
       </label>
       <label>
         Commodity Product:
@@ -150,7 +150,7 @@ export default function Form_Add_Item(props) {
           type="text"
         />
         <br />
-        <p>{stateError.input_text_commodity_product}</p>
+        <span>{stateError.input_text_commodity_product}</span>
       </label>
       <button disabled={stateDisabled}>Submit</button>
     </form>

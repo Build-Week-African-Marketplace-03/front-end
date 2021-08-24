@@ -150,7 +150,7 @@ export default function Form_Add_Item(props) {
           type="text"
         />
         <br />
-        <p>{stateError.input_text_commodity_product}</p>
+        <span>{stateError.input_text_commodity_product}</span>
       </label>
       <button disabled={stateDisabled}>Submit</button>
     </form>
