@@ -20,7 +20,7 @@ export default function ProductPage(props) {
     () => {
       if (stateItem) {
         //push item into an array
-        set_stateArrayItems([...stateArrayItems, cb_get_new_object()]);
+        set_stateArrayItems([...stateArrayItems, stateItem]);
         //reset stateItem to null
         set_stateItem(null);
       }

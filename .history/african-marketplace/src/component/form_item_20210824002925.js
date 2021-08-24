@@ -12,32 +12,26 @@ export default function Form_Item(props) {
   return (
     <>
       <tr>
-        <td>
-          <input value={props.input_object.id} readonly="readonly" />
+        <td readonly="readonly">
+          <input value={props.input_object.id} />
         </td>
         <td>
-          <input value={props.input_object.name} readonly="readonly" />
+          <input value={props.input_object.name} />
         </td>
         <td>
-          <input value={props.input_object.quantity} readonly="readonly" />
+          <input value={props.input_object.quantity} />
         </td>
         <td>
           <input value={props.input_object.description} />
         </td>
         <td>
-          <input
-            value={props.input_object.commodity_category}
-            readonly="readonly"
-          />
+          <input value={props.input_object.commodity_category} />
         </td>
         <td>
-          <input value={props.input_object.sub_category} readonly="readonly" />
+          <input value={props.input_object.sub_category} />
         </td>
         <td>
-          <input
-            value={props.input_object.commodity_product}
-            readonly="readonly"
-          />
+          <input value={props.input_object.commodity_product} />
         </td>
       </tr>
     </>

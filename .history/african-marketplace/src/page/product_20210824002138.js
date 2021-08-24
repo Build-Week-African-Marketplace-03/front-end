@@ -5,24 +5,23 @@ import { sample_items } from "../component/constant";
 export default function ProductPage(props) {
   const [stateItem, set_stateItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
-  const [stateCounter, set_stateCounter] = useState(1);
+  const [stateCounter, set_stateCounter] = useState[0];
 
-  const cb_get_new_object = () => {
+  const cb_get_new_object = () =>{
     if (stateItem) {
-      const temp_object = stateItem;
-      temp_object["id"] = stateCounter;
-      set_stateCounter(stateCounter + 1);
-      return temp_object;
+      const temp_object  = stateItem
     }
-  };
+  }
 
   useEffect(
     () => {
       if (stateItem) {
         //push item into an array
-        set_stateArrayItems([...stateArrayItems, cb_get_new_object()]);
+        set_stateArrayItems([...stateArrayItems, stateItem]);
         //reset stateItem to null
         set_stateItem(null);
+        //debug
+        console.log("array_items.length = ", array_items.length);
       }
     },
     //call ueseEffect when the state of stateItem change

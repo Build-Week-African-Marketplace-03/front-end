@@ -11,7 +11,8 @@ export default function ProductPage(props) {
     if (stateItem) {
       const temp_object = stateItem;
       temp_object["id"] = stateCounter;
-      set_stateCounter(stateCounter + 1);
+      const tempCounter = stateCounter + 1;
+      set_stateCounter(stateCounter++);
       return temp_object;
     }
   };
@@ -20,7 +21,7 @@ export default function ProductPage(props) {
     () => {
       if (stateItem) {
         //push item into an array
-        set_stateArrayItems([...stateArrayItems, cb_get_new_object()]);
+        set_stateArrayItems([...stateArrayItems, stateItem]);
         //reset stateItem to null
         set_stateItem(null);
       }
