@@ -43,19 +43,9 @@ export default function ProductPage(props) {
         Array.from(stateArrayItems).map((element) => {
           return (
             <p>
-              {element.id}
-              {", "}
-              {element.name}
-              {", "}
-              {element.quantity}
-              {", "}
-              {element.description}
-              {", "}
-              {element.commodity_category}
-              {", "}
-              {element.sub_category}
-              {", "}
-              {element.commodity_product}
+              {element.id}, {element.name}, {element.quantity},{" "}
+              {element.description}, {element.commodity_category},
+              {element.sub_category}, {element.commodity_product}
             </p>
           );
         })}

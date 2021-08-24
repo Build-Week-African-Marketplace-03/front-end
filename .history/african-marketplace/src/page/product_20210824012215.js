@@ -39,26 +39,7 @@ export default function ProductPage(props) {
 
       <Form_Listing_Item input_arrayItems={stateArrayItems} />
 
-      {Array.from(stateArrayItems) &&
-        Array.from(stateArrayItems).map((element) => {
-          return (
-            <p>
-              {element.id}
-              {", "}
-              {element.name}
-              {", "}
-              {element.quantity}
-              {", "}
-              {element.description}
-              {", "}
-              {element.commodity_category}
-              {", "}
-              {element.sub_category}
-              {", "}
-              {element.commodity_product}
-            </p>
-          );
-        })}
+      
     </div>
   );
 }
