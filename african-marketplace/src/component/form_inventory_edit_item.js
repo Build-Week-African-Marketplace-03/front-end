@@ -13,8 +13,14 @@ export default function Form_Inventory_Edit_Item(props) {
     //   `form_item.js, props.input_object[${name}] = ${props.input_object[name]}`
     // );
 
-    //push the modified object into the product.js page when use change any value
+    //push the modified object into the inventory.js page
     props.input_cb_set_modifiedItem(props.input_object);
+  };
+
+  const cb_onClick_Remove = (event) => {
+    console.log("form_inventory_edit_item.js, called cb_onClick_Remove");
+    //push the pending delete object into inventory.js page
+    props.input_cb_set_statePendingDeleteItem(props.input_object);
   };
 
   return (
@@ -70,6 +76,9 @@ export default function Form_Inventory_Edit_Item(props) {
             name="commodity_product"
             type="text"
           />
+        </td>
+        <td>
+          <button onClick={cb_onClick_Remove}>Remove</button>
         </td>
       </tr>
     </>
