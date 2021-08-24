@@ -8,11 +8,11 @@ import ProductPage from "./page/product";
 import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import React, { useState, UseEffect, useEffect} from 'react'
+import React, { useState, useEffect} from 'react'
 import { reach } from 'yup'
 import FormLogin from "./component/FormLogin";
 import FormProfile from "./component/FormProfile";
-import profileSchema from './validation/profileFormSchema'
+import schema from './validation/profileFormSchema'
 import loginSchema from "./validation/loginSchema";
 
 const initialProfileValues = {
@@ -23,10 +23,12 @@ const initialProfileValues = {
   address: '',
   password: '',
 }
-const initialLoginValues={
+
+const initialLoginValues = {
   username: '',
   password: '',
 }
+
 const initialItemValues = {
   productName: '',
   quantity: 0,
@@ -35,7 +37,7 @@ const initialItemValues = {
   prodSubCategory:'',
 }
 const initialProfileErrors = {
-  sellerName: '',
+  sellerName: 'test',
   username: '',
   email: '',
   phoneNumber: '',
@@ -47,6 +49,11 @@ const initialProfileErrors = {
   prodSubCategory:'',
 }
 
+const initialLoginErrors = {
+  username: '',
+  password: ''
+}
+
 
 const initialDisabled = true
 
@@ -56,14 +63,22 @@ function App() {
   const [loginValues, setLoginValues] = useState(initialLoginValues)
   const [itemValues, setItemValues] = useState(initialItemValues)
   const [formErrors, setFormErrors] = useState(initialProfileErrors)
+  const [loginErrors, setLoginErrors] = useState(initialLoginErrors)
   const [disabled, setDisabled] = useState(initialDisabled) 
-  
+ 
   const validate = (name, value) => {
-    reach(profileSchema, name)
-      .validate(value)
-      .then(() => setFormErrors({ ...formErrors, [name]: ''}))
-      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
+    reach(schema, name)
+    .validate(value)
+    .then(() => setFormErrors({ ...formErrors, [name]: ''}))
+    .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
   }
+
+  // const loginValidate = (name, value) => {
+  //   reach(loginSchema, name)
+  //   .validate(value)
+  //   .then(() => setLoginErrors({ ...loginErrors, [name]:''}) )
+  //   .catch(err => setLoginErrors({ ...loginErrors, [name]: err.errors[0]}))
+  // }
 
   const inputChange = (name, value) => {
     validate(name, value)
@@ -82,17 +97,19 @@ function App() {
   }
 
 
-  const profileSubmit = () => {
-    const newProfile = {
+  const submit = () => {
+    const newFormSubmission = {
       sellerName: profileValues.sellerName.trim(),
       username: profileValues.username.trim(),
       email: profileValues.email.trim(),
       phoneNumber: profileValues.phoneNumber.trim(),
       address: profileValues.address.trim(),
       password: profileValues.password.trim(),
+    
     }
-    console.log(newProfile)
+    console.log(newFormSubmission)
     setProfileValues(initialProfileValues)
+    setLoginValues(initialLoginValues)
   }
   
   const loginSubmit = () => {
@@ -115,10 +132,13 @@ function App() {
   }
 
   useEffect(() => {
-    profileSchema.isValid(profileValues).then(valid => setDisabled(!valid))
+    schema.isValid(profileValues).then(valid => setDisabled(!valid))
   },[profileValues])
   
-
+  // useEffect(() => {
+  //   loginSchema.isValid(loginValues).then(valid => setDisabled(!valid))
+  // },[loginValues])
+  
   return (
     <div className="App">
       <header>
@@ -132,7 +152,7 @@ function App() {
               <FormLogin 
                 values={loginValues}
                 change={inputChange}
-                submit={loginSubmit}
+                submit={submit}
                 disabled={disabled}
                 errors={formErrors}
               />
@@ -144,7 +164,7 @@ function App() {
               <FormProfile 
                 values={profileValues}
                 change={inputChange}
-                submit={profileSubmit}
+                submit={submit}
                 disabled={disabled}
                 errors={formErrors}
               />

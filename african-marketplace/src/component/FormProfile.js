@@ -1,4 +1,5 @@
 import React from "react";
+import { Formik } from 'formik'
 
 export default function FormProfile(props) {
  const {
@@ -77,8 +78,10 @@ export default function FormProfile(props) {
         />
       </label>
       <br />
-
-      <button disabled={disabled}>Submit</button>
+      <div className='form-submit'>
+        <button disabled={disabled}>Submit</button>
+        <div>{errors.name}</div>
+      </div>
     </form>
   );
 }

@@ -7,13 +7,13 @@ const initialDisabled = true
 
 export default function FormLogin(props) {
   
-  const [disabled, setDisabled] = useState(initialDisabled)
+  // const [disabled, setDisabled] = useState(initialDisabled)
   
     const {
       values,
       submit,
       change,
-      // disabled,
+      disabled,
       errors
     } = props
    
@@ -27,10 +27,9 @@ export default function FormLogin(props) {
       change(name, value)
     }
      
-    useEffect(() => {
-      // 🔥 STEP 9- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
-      loginSchema.isValid(values).then(valid => setDisabled(!valid))
-    }, [values])
+    // useEffect(() => {
+    //   loginSchema.isValid(values).then(valid => setDisabled(!valid))
+    // }, [values])
   return (
     <form onSubmit={onSubmit}>
       <div>

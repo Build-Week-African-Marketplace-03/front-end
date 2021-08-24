@@ -4,24 +4,25 @@ const profileFormSchema = yup.object().shape({
     sellerName: yup
         .string()
         .trim()
-        .required('Name is required'),
+        .required(),
     username: yup   
         .string()
         .trim()
-        .required(''),
+        .required('Username is required')
+        .min(2,'must be at least 2 characters'),
     email: yup
         .string()
         .email()
-        .required(),    
+        .required('Email is required'),    
     phoneNumber: yup
         .string()
-        .required(),
+        .required('Phone Number is required'),
     address: yup
         .string()
-        .required(),
+        .required('Address is required'),
     password: yup 
         .string()
-        .required()
+        .required('Password is required')
 })
 
 
