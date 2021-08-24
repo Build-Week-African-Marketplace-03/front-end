@@ -6,7 +6,7 @@ export default function ProductPage(props) {
   const [stateNewItem, set_stateItem] = useState(null);
   const [stateModifiedItem, set_modifiedItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
-  const [stateCounter, set_stateCounter] = useState(90001);
+  const [stateCounter, set_stateCounter] = useState(1);
 
   /**
    * cb_get_new_object add a key pair value to an object
@@ -24,13 +24,13 @@ export default function ProductPage(props) {
 
   /**
    * below useEffect track the modifiedItem
-   * .....the modified item is an item in the form_listing_items,
-   * .....this allow user to edit an existing item on the list
+   * .....the modified item is an item in the form_listing_items, 
+   * ......this allow user to edit an existing item on the list
    */
   useEffect(() => {
     //if stateModifiedItem is not null
     if (stateModifiedItem) {
-      // console.log("product.js, modifiedItem = ", stateModifiedItem);
+      console.log("product.js, modifiedItem = ", stateModifiedItem);
       const temp_array = stateArrayItems;
       //traverse through temp_array and push the modified item into the same index
       for (let index = 0; index < Array.from(temp_array); index++) {

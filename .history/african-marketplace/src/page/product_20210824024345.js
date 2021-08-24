@@ -6,7 +6,7 @@ export default function ProductPage(props) {
   const [stateNewItem, set_stateItem] = useState(null);
   const [stateModifiedItem, set_modifiedItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
-  const [stateCounter, set_stateCounter] = useState(90001);
+  const [stateCounter, set_stateCounter] = useState(1);
 
   /**
    * cb_get_new_object add a key pair value to an object
@@ -30,7 +30,7 @@ export default function ProductPage(props) {
   useEffect(() => {
     //if stateModifiedItem is not null
     if (stateModifiedItem) {
-      // console.log("product.js, modifiedItem = ", stateModifiedItem);
+      console.log("product.js, modifiedItem = ", stateModifiedItem);
       const temp_array = stateArrayItems;
       //traverse through temp_array and push the modified item into the same index
       for (let index = 0; index < Array.from(temp_array); index++) {

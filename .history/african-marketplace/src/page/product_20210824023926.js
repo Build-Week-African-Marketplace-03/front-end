@@ -3,17 +3,17 @@ import Form_Listing_Item from "../component/form_listing_item";
 import Form_Add_Item from "../component/form_add_item";
 import { sample_items } from "../component/constant";
 export default function ProductPage(props) {
-  const [stateNewItem, set_stateItem] = useState(null);
+  const [stateItem, set_stateItem] = useState(null);
   const [stateModifiedItem, set_modifiedItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
-  const [stateCounter, set_stateCounter] = useState(90001);
+  const [stateCounter, set_stateCounter] = useState(1);
 
   /**
    * cb_get_new_object add a key pair value to an object
    */
   const cb_get_new_object = () => {
-    if (stateNewItem) {
-      const temp_object = stateNewItem;
+    if (stateItem) {
+      const temp_object = stateItem;
       //add a new key pair value
       temp_object["id"] = stateCounter;
       //increase stateCounter by one increment
@@ -24,25 +24,20 @@ export default function ProductPage(props) {
 
   /**
    * below useEffect track the modifiedItem
-   * .....the modified item is an item in the form_listing_items,
-   * .....this allow user to edit an existing item on the list
+   * .....the modified item is an item in the form_listing_items, this allow user to edit an existing item on the list
    */
   useEffect(() => {
-    //if stateModifiedItem is not null
     if (stateModifiedItem) {
-      // console.log("product.js, modifiedItem = ", stateModifiedItem);
+      console.log("product.js, modifiedItem = ", stateModifiedItem);
       const temp_array = stateArrayItems;
       //traverse through temp_array and push the modified item into the same index
       for (let index = 0; index < Array.from(temp_array); index++) {
-        //when a matching ID is found
+        //when a matching ID is found, 
         if ((temp_array[index].id = stateModifiedItem.id)) {
-          //replace the existing item with modified item
           temp_array[index] = stateModifiedItem;
-          //break the for loop
           break;
         }
       }
-      //set the stateModifiedItem to null
       set_modifiedItem(null);
     }
   }, [stateModifiedItem]);
@@ -54,8 +49,7 @@ export default function ProductPage(props) {
    */
   useEffect(
     () => {
-      //if stateItem is not null
-      if (stateNewItem) {
+      if (stateItem) {
         //push item into an array
         set_stateArrayItems([...stateArrayItems, cb_get_new_object()]);
         //reset stateItem to null
@@ -63,7 +57,7 @@ export default function ProductPage(props) {
       }
     },
     //call ueseEffect when the state of stateItem change
-    [stateNewItem]
+    [stateItem]
   );
 
   return (

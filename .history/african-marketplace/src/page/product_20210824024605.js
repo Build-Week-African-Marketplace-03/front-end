@@ -6,7 +6,7 @@ export default function ProductPage(props) {
   const [stateNewItem, set_stateItem] = useState(null);
   const [stateModifiedItem, set_modifiedItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
-  const [stateCounter, set_stateCounter] = useState(90001);
+  const [stateCounter, set_stateCounter] = useState(1);
 
   /**
    * cb_get_new_object add a key pair value to an object

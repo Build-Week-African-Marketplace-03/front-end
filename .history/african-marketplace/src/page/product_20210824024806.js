@@ -6,7 +6,7 @@ export default function ProductPage(props) {
   const [stateNewItem, set_stateItem] = useState(null);
   const [stateModifiedItem, set_modifiedItem] = useState(null);
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
-  const [stateCounter, set_stateCounter] = useState(90001);
+  const [stateCounter, set_stateCounter] = useState(90000);
 
   /**
    * cb_get_new_object add a key pair value to an object
@@ -17,7 +17,7 @@ export default function ProductPage(props) {
       //add a new key pair value
       temp_object["id"] = stateCounter;
       //increase stateCounter by one increment
-      set_stateCounter(stateCounter + 1);
+      set_stateCounter(++stateCounter);
       return temp_object;
     }
   };
