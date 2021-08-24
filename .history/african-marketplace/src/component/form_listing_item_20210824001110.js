@@ -17,11 +17,12 @@ export default function Form_Listing_Item(props) {
           </tr>
         </thead>
         <tbody>
-          {Array.from(props.input_arrayItems).map((object) => {
-            return <Form_Item input_object={object} />;
-          })}
+          
         </tbody>
       </table>
+      {Array.from(props.input_arrayItems).map((object) => {
+        return <Form_Item input_object={object} />;
+      })}
     </div>
   );
 }

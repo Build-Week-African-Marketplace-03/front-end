@@ -21,6 +21,6 @@ export const sample_items = [
     description: "(some description)",
     commodity_category: "commodity category C",
     sub_category: "sub category C",
-    commodity_product: "commodity product C",
+    commoditcommodity_productyProduct: "commodity product C",
   },
 ];

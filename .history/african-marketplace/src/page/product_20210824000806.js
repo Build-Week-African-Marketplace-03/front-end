@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Form_Listing_Item from "../component/form_listing_item";
 import Form_Add_Item from "../component/form_add_item";
-import { sample_items } from "../component/constant";
+import { sample_items } from "./constant";
 export default function ProductPage(props) {
   const [stateItem, set_stateItem] = useState(null);
-  const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
+  const [stateArrayItems, set_stateArrayItems] = useState([]);
   const array_items = [];
 
   useEffect(

@@ -13,7 +13,7 @@ export const sample_items = [
     description: "(some description)",
     commodity_category: "commodity category B",
     sub_category: "sub category B",
-    commodity_product: "commodity product B",
+    commodityProduct: "commodity product B",
   },
   {
     name: "grey bean",
@@ -21,6 +21,6 @@ export const sample_items = [
     description: "(some description)",
     commodity_category: "commodity category C",
     sub_category: "sub category C",
-    commodity_product: "commodity product C",
+    commodityProduct: "commodity product C",
   },
 ];

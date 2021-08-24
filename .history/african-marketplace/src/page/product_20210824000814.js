@@ -4,7 +4,7 @@ import Form_Add_Item from "../component/form_add_item";
 import { sample_items } from "../component/constant";
 export default function ProductPage(props) {
   const [stateItem, set_stateItem] = useState(null);
-  const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
+  const [stateArrayItems, set_stateArrayItems] = useState([]);
   const array_items = [];
 
   useEffect(

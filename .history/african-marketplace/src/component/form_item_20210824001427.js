@@ -13,23 +13,12 @@ export default function Form_Item(props) {
     <>
       <tr>
         <td>
-          <input value={props.input_object.name} />
-        </td>
-        <td>
-          <input value={props.input_object.quantity} />
-        </td>
-        <td>
-          <input value={props.input_object.description} />
-        </td>
-        <td>
-          <input value={props.input_object.commodity_category} />
-        </td>
-        <td>
-          <input value={props.input_object.sub_category} />
-        </td>
-        <td>
-          <input value={props.input_object.commodity_product} />
-        </td>
+      <input value={props.input_object.name} /></td>
+      <input value={props.input_object.quantity} />
+      <input value={props.input_object.description} />
+      <input value={props.input_object.commodity_category} />
+      <input value={props.input_object.sub_category} />
+      <input value={props.input_object.commodity_product} />
       </tr>
     </>
   );
