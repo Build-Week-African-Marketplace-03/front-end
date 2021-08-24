@@ -4,8 +4,7 @@ import NavigationBar from "./component/navigation-bar";
 import Page404 from "./page/404";
 import Footer from "./component/footer";
 import AboutPage from "./page/about";
-import Listing_ItemForSales from "./component/listing_items_for_sales";
-import Inventory from "./page/inventory";
+import ProductPage from "./page/product";
 import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
 import Specific_Product from "./page/specific_product";
@@ -24,10 +23,7 @@ function App(props) {
               <HomePage />
             </Route>
             <Route path="/product">
-              <Listing_ItemForSales />
-            </Route>
-            <Route path="/inventory">
-              <Inventory />
+              <ProductPage />
             </Route>
             <Route path="/profile">
               <ProfilePage />

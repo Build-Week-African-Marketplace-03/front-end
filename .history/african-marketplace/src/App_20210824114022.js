@@ -24,7 +24,7 @@ function App(props) {
               <HomePage />
             </Route>
             <Route path="/product">
-              <Listing_ItemForSales />
+              <Inventory />
             </Route>
             <Route path="/inventory">
               <Inventory />

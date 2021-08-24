@@ -7,7 +7,7 @@ export default function NavigationBar(props) {
       <Container>
         <Navbar.Brand href="/">African Marketplace</Navbar.Brand>
         <Nav.Link href="/product">Product</Nav.Link>
-        <Nav.Link href="/inventory">Inventory</Nav.Link>
+        <Nav.Link href="/inventory">Product</Nav.Link>
         <Nav.Link href="/profile">Profile</Nav.Link>
       </Container>
     </Navbar>
