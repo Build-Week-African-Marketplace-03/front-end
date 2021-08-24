@@ -34,9 +34,6 @@ function App(props) {
             <Route path="/Contact">
               <ContactPage />
             </Route>
-            <Route path="product/:id">
-              <Specific_Product />
-            </Route>
             <Route>
               <Page404 />
             </Route>
