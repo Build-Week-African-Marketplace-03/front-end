@@ -52,3 +52,16 @@ function App(props) {
 }
 
 export default App;
+
+/*
+
+the inventory page is composed of the below components:
+...form_inventory_add_item.js
+...form_inventory_edit_item.js
+...form_inventory_inventory_sheet.js
+
+the product page is composed of the below components:
+...item_for_sale.js
+...listing_items_for_sales.js
+
+*/
