@@ -31,17 +31,17 @@ export default function Inventory(props) {
   useEffect(() => {
     //if stateModifiedItem is not null
     if (statePendingDeleteItem) {
-      console.log(
-        "product.js, statePendingDeleteItem = ",
-        statePendingDeleteItem
-      );
+      // console.log(
+      //   "product.js, statePendingDeleteItem = ",
+      //   statePendingDeleteItem
+      // );
       const temp_array = Array.from(stateArrayItems).filter((element) => {
         if (element.id !== statePendingDeleteItem.id) {
           return element;
         }
       });
 
-      console.log("temp_array.length = ", temp_array.length);
+      // console.log("temp_array.length = ", temp_array.length);
 
       //store temp_array in stateArrayItems
       set_stateArrayItems(temp_array);

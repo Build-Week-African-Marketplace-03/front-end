@@ -18,7 +18,7 @@ export default function Form_Inventory_Edit_Item(props) {
   };
 
   const cb_onClick_Remove = (event) => {
-    console.log("form_inventory_edit_item.js, called cb_onClick_Remove");
+    // console.log("form_inventory_edit_item.js, called cb_onClick_Remove");
     //push the pending delete object into inventory.js page
     props.input_cb_set_statePendingDeleteItem(props.input_object);
   };
