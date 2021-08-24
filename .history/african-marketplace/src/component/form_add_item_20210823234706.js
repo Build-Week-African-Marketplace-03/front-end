@@ -33,7 +33,7 @@ export default function Form_Add_Item(props) {
     console.log("new_object = ", new_object);
 
     //return formData to the parent element
-    props.input_cb_set_stateItem(new_object);
+    props.input_cb_set_stateItem();
     //reset form
     set_stateFormData(initial_state);
   };

@@ -27,7 +27,7 @@ export default function Form_Add_Item(props) {
       description: stateFormData.input_text_description,
       commodity_category: stateFormData.input_text_commodity_category,
       sub_category: stateFormData.input_text_sub_category,
-      commodity_product: stateFormData.input_text_commodity_product,
+      commodity_product: stateFormData._commodity_product,
     };
 
     console.log("new_object = ", new_object);

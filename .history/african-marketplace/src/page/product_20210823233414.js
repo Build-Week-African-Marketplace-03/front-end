@@ -10,7 +10,7 @@ export default function ProductPage(props) {
     () => {
       if (stateItem) {
         //push item into an array
-        set_stateArrayItems([...stateArrayItems, stateItem]);
+        set_stateArrayItems([...stateArrayItems, stateItem);
         //reset stateItem to null
         set_stateItem(null);
         //debug
@@ -29,7 +29,7 @@ export default function ProductPage(props) {
       <Form_Add_Item input_cb_set_stateItem={set_stateItem} />
       <br />
 
-      <Form_Listing_Item input_arrayItems ={stateArrayItems}/>
+      {/* <Form_Listing_Item /> */}
     </div>
   );
 }

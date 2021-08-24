@@ -20,20 +20,15 @@ export default function Form_Add_Item(props) {
   const cb_onSubmit = (event) => {
     //prevent default behavior
     event.preventDefault();
-    //construct a new object
-    const new_object = {
+    //return formData to the parent element
+    props.input_cb_set_stateItem({
       name: stateFormData.input_text_name,
-      quantity: stateFormData.input_number_quantity,
-      description: stateFormData.input_text_description,
+      quantity: stateFormData.quantity,
+      description: stateFormData.description,
       commodity_category: stateFormData.input_text_commodity_category,
       sub_category: stateFormData.input_text_sub_category,
       commodity_product: stateFormData.input_text_commodity_product,
-    };
-
-    console.log("new_object = ", new_object);
-
-    //return formData to the parent element
-    props.input_cb_set_stateItem(new_object);
+    });
     //reset form
     set_stateFormData(initial_state);
   };
@@ -67,7 +62,7 @@ export default function Form_Add_Item(props) {
           onChange={cb_onChange}
           name="input_text_description"
           id="input_text_description"
-          value={stateFormData.input_text_description}
+          value={stateFormData.description}
           type="text"
         />
       </label>
@@ -77,7 +72,7 @@ export default function Form_Add_Item(props) {
           onChange={cb_onChange}
           name="input_text_commodity_category"
           id="input_text_commodity_category"
-          value={stateFormData.input_text_commodity_category}
+          value={stateFormData.commodity_category}
           type="text"
         />
       </label>
@@ -87,7 +82,7 @@ export default function Form_Add_Item(props) {
           onChange={cb_onChange}
           name="input_text_sub_category"
           id="input_text_sub_category"
-          value={stateFormData.input_text_sub_category}
+          value={stateFormData.sub_category}
           type="text"
         />
       </label>
@@ -97,7 +92,7 @@ export default function Form_Add_Item(props) {
           onChange={cb_onChange}
           name="input_text_commodity_product"
           id="input_text_commodity_product"
-          value={stateFormData.input_text_commodity_product}
+          value={stateFormData.commodity_product}
           type="text"
         />
       </label>

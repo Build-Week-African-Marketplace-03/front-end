@@ -25,15 +25,15 @@ export default function Form_Item(props) {
       </label>
       <label>
         Commodity Category:
-        <input value={props.input_object.commodity_category} />
+        <input value={props.input_object.commodityCategory} />
       </label>
       <label>
         Sub-Category:
-        <input value={props.input_object.sub_category} />
+        <input value={props.input_object.subCategory} />
       </label>
       <label>
         Commodity Product:
-        <input value={props.input_object.commodity_product} />
+        <input value={props.input_object.commodityCategory} />
       </label>
     </form>
   );
