@@ -38,15 +38,10 @@ export default function Form_Add_Item(props) {
   //------------------------------------Disable Submit button-------------------
   const [stateDisabled, setDisabled] = useState(true);
 
+
   //----------------------------------State Form Data----------------------------
 
   const [stateFormData, set_stateFormData] = useState(initial_state);
-
-  useEffect(() => {
-    // console.log("useEffect - stateFormData = ", stateFormData);
-
-    schema.isValid(stateFormData).then((valid) => setDisabled(!valid));
-  }, [stateFormData]); //end useEffect
 
   //------------------------------cb_onChange function---------------------------
   const cb_onChange = (event) => {

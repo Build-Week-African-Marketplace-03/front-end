@@ -35,27 +35,14 @@ export default function Form_Add_Item(props) {
       .catch((err) => set_stateError({ ...stateError, [name]: err.errors[0] }));
   };
 
-  //------------------------------------Disable Submit button-------------------
-  const [stateDisabled, setDisabled] = useState(true);
-
-  //----------------------------------State Form Data----------------------------
-
   const [stateFormData, set_stateFormData] = useState(initial_state);
 
-  useEffect(() => {
-    // console.log("useEffect - stateFormData = ", stateFormData);
-
-    schema.isValid(stateFormData).then((valid) => setDisabled(!valid));
-  }, [stateFormData]); //end useEffect
-
-  //------------------------------cb_onChange function---------------------------
   const cb_onChange = (event) => {
     const { checked, value, name, type } = event.target;
     set_stateFormData({ ...stateFormData, [name]: value });
     cb_setFormErrors(name, value);
   };
 
-  //------------------------------cb_onSubmit function---------------------------
   const cb_onSubmit = (event) => {
     //prevent default behavior
     event.preventDefault();
@@ -74,7 +61,6 @@ export default function Form_Add_Item(props) {
     set_stateFormData(initial_state);
   };
 
-  //--------------------------return statement----------------------------------
   return (
     <form class="flex-column" onSubmit={cb_onSubmit}>
       <label>
@@ -144,7 +130,7 @@ export default function Form_Add_Item(props) {
         />
         <span>{stateError.input_text_commodity_product}</span>
       </label>
-      <button disabled={stateDisabled}>Submit</button>
+      <button>Submit</button>
     </form>
   );
 }

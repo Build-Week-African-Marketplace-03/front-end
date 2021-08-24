@@ -10,52 +10,23 @@ export default function Form_Add_Item(props) {
     input_text_sub_category: "",
     input_text_commodity_product: "",
   };
-
-  //------------------------------------Validation----------------------------
   const schema = yup.object().shape({
     input_text_name: yup.string().required("Text Required"),
-    input_number_quantity: yup
-      .number()
-      .min(1)
-      .max(1000)
-      .required("Type in a positive number"),
+    input_number_quantity: yup.number().required("Type in a positive number"),
     input_text_description: yup.string().required("Text Required"),
     input_text_commodity_category: yup.string().required("Text Required"),
     input_text_sub_category: yup.string().required("Text Required"),
     input_text_commodity_product: yup.string().required("Text Required"),
   });
-
-  const [stateError, set_stateError] = useState(initial_state);
-
-  const cb_setFormErrors = (name, value) => {
-    yup
-      .reach(schema, name)
-      .validate(value)
-      .then(() => set_stateError({ ...stateError, [name]: "" }))
-      .catch((err) => set_stateError({ ...stateError, [name]: err.errors[0] }));
-  };
-
-  //------------------------------------Disable Submit button-------------------
-  const [stateDisabled, setDisabled] = useState(true);
-
-  //----------------------------------State Form Data----------------------------
+  
 
   const [stateFormData, set_stateFormData] = useState(initial_state);
 
-  useEffect(() => {
-    // console.log("useEffect - stateFormData = ", stateFormData);
-
-    schema.isValid(stateFormData).then((valid) => setDisabled(!valid));
-  }, [stateFormData]); //end useEffect
-
-  //------------------------------cb_onChange function---------------------------
   const cb_onChange = (event) => {
     const { checked, value, name, type } = event.target;
     set_stateFormData({ ...stateFormData, [name]: value });
-    cb_setFormErrors(name, value);
   };
 
-  //------------------------------cb_onSubmit function---------------------------
   const cb_onSubmit = (event) => {
     //prevent default behavior
     event.preventDefault();
@@ -74,7 +45,6 @@ export default function Form_Add_Item(props) {
     set_stateFormData(initial_state);
   };
 
-  //--------------------------return statement----------------------------------
   return (
     <form class="flex-column" onSubmit={cb_onSubmit}>
       <label>
@@ -86,7 +56,6 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_name}
           type="text"
         />
-        <span>{stateError.input_text_name}</span>
       </label>
       <label>
         Quanity:
@@ -98,7 +67,6 @@ export default function Form_Add_Item(props) {
           type="number"
           min="1"
         />
-        <span>{stateError.input_number_quantity}</span>
       </label>
       <label>
         Description:
@@ -109,7 +77,6 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_description}
           type="text"
         />
-        <span>{stateError.input_text_description}</span>
       </label>
       <label>
         Commodity Category:
@@ -120,7 +87,6 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_commodity_category}
           type="text"
         />
-        <span>{stateError.input_text_commodity_category}</span>
       </label>
       <label>
         Sub-Category:
@@ -131,7 +97,6 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_sub_category}
           type="text"
         />
-        <span>{stateError.input_text_sub_category}</span>
       </label>
       <label>
         Commodity Product:
@@ -142,9 +107,8 @@ export default function Form_Add_Item(props) {
           value={stateFormData.input_text_commodity_product}
           type="text"
         />
-        <span>{stateError.input_text_commodity_product}</span>
       </label>
-      <button disabled={stateDisabled}>Submit</button>
+      <button>Submit</button>
     </form>
   );
 }
