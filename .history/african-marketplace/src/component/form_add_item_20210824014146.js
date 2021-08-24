@@ -145,7 +145,7 @@ export default function Form_Add_Item(props) {
         <input
           onChange={cb_onChange}
           name="input_text_commodity_product"
-          // id="input_text_commodity_product"
+          id="input_text_commodity_product"
           value={stateFormData.input_text_commodity_product}
           type="text"
         />

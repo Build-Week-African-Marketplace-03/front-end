@@ -1,23 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Form_Item(props) {
   const cb_onChange = (event) => {
     //props.input_cb_set_modifiedItem
 
     const { value, name } = event.target;
-    console.log(`name = ${name}, value = ${value}, `);
-
-    props.input_object[name] = value;
-
-    console.log(
-      `form_item.js, props.input_object[${name}] = ${props.input_object[name]}`
-    );
-    props.input_cb_set_modifiedItem(props.input_object);
+    props.input_object[{ name }] = value;
+    console.log(`form_item.js, props.input_object[${name}] = props.input_object{}`);
+    // props.input_cb_set_modifiedItem(props.input_object);
   };
-
-  useEffect(() => {
-    console.log(props.input_object);
-  }, [props.input_object]);
 
   return (
     <>
@@ -30,7 +21,6 @@ export default function Form_Item(props) {
             value={props.input_object.name}
             onChange={cb_onChange}
             name="name"
-            type="text"
           />
         </td>
         <td>
@@ -38,7 +28,6 @@ export default function Form_Item(props) {
             value={props.input_object.quantity}
             onChange={cb_onChange}
             name="quantity"
-            type="number"
           />
         </td>
         <td>
@@ -46,15 +35,13 @@ export default function Form_Item(props) {
             value={props.input_object.description}
             onChange={cb_onChange}
             name="description"
-            type="text"
           />
         </td>
         <td>
           <input
             value={props.input_object.commodity_category}
             onChange={cb_onChange}
-            name="commodity_category"
-            type="text"
+            name="commodity category"
           />
         </td>
         <td>
@@ -62,7 +49,6 @@ export default function Form_Item(props) {
             value={props.input_object.sub_category}
             onChange={cb_onChange}
             name="sub_category"
-            type="text"
           />
         </td>
         <td>
@@ -70,7 +56,6 @@ export default function Form_Item(props) {
             value={props.input_object.commodity_product}
             onChange={cb_onChange}
             name="commodity_product"
-            type="text"
           />
         </td>
       </tr>

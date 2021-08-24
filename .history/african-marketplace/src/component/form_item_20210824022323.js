@@ -70,7 +70,6 @@ export default function Form_Item(props) {
             value={props.input_object.commodity_product}
             onChange={cb_onChange}
             name="commodity_product"
-            type="text"
           />
         </td>
       </tr>

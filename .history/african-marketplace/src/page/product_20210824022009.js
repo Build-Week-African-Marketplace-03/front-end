@@ -21,10 +21,9 @@ export default function ProductPage(props) {
     if (modifiedItem) {
       console.log("product.js, modifiedItem = ", modifiedItem);
       const temp_array = stateArrayItems;
-      for (let index = 0; index < Array.from(temp_array); index++) {
-        if ((temp_array[index].id = modifiedItem.id)) {
-          temp_array[index] = modifiedItem;
-          break;
+      for (let index = 0; index < Array.from(temp_array);index++){
+        if (temp_array[index].id = modifiedItem.id){
+          temp_array
         }
       }
       set_modifiedItem(null);

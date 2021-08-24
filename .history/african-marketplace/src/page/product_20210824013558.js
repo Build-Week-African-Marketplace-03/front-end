@@ -4,7 +4,7 @@ import Form_Add_Item from "../component/form_add_item";
 import { sample_items } from "../component/constant";
 export default function ProductPage(props) {
   const [stateItem, set_stateItem] = useState(null);
-  const [modifiedItem, set_modifiedItem] = useState(null);
+  const [to]
   const [stateArrayItems, set_stateArrayItems] = useState(sample_items);
   const [stateCounter, set_stateCounter] = useState(1);
 
@@ -16,20 +16,6 @@ export default function ProductPage(props) {
       return temp_object;
     }
   };
-
-  useEffect(() => {
-    if (modifiedItem) {
-      console.log("product.js, modifiedItem = ", modifiedItem);
-      const temp_array = stateArrayItems;
-      for (let index = 0; index < Array.from(temp_array); index++) {
-        if ((temp_array[index].id = modifiedItem.id)) {
-          temp_array[index] = modifiedItem;
-          break;
-        }
-      }
-      set_modifiedItem(null);
-    }
-  }, [modifiedItem]);
 
   useEffect(
     () => {
@@ -52,10 +38,7 @@ export default function ProductPage(props) {
       <Form_Add_Item input_cb_set_stateItem={set_stateItem} />
       <br />
 
-      <Form_Listing_Item
-        input_arrayItems={stateArrayItems}
-        input_cb_set_modifiedItem={set_modifiedItem}
-      />
+      <Form_Listing_Item input_arrayItems={stateArrayItems} input_cb_set_stateArrayItems={set_stateArrayItems}/>
 
       {Array.from(stateArrayItems) &&
         Array.from(stateArrayItems).map((element) => {

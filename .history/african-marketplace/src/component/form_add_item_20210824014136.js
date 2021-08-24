@@ -96,7 +96,7 @@ export default function Form_Add_Item(props) {
         <input
           onChange={cb_onChange}
           name="input_number_quantity"
-          // id="input_number_quantity"
+          id="input_number_quantity"
           value={stateFormData.input_number_quantity}
           type="number"
           min="1"
@@ -109,7 +109,7 @@ export default function Form_Add_Item(props) {
         <input
           onChange={cb_onChange}
           name="input_text_description"
-          // id="input_text_description"
+          id="input_text_description"
           value={stateFormData.input_text_description}
           type="text"
         />
@@ -121,7 +121,7 @@ export default function Form_Add_Item(props) {
         <input
           onChange={cb_onChange}
           name="input_text_commodity_category"
-          // id="input_text_commodity_category"
+          id="input_text_commodity_category"
           value={stateFormData.input_text_commodity_category}
           type="text"
         />
@@ -133,7 +133,7 @@ export default function Form_Add_Item(props) {
         <input
           onChange={cb_onChange}
           name="input_text_sub_category"
-          // id="input_text_sub_category"
+          id="input_text_sub_category"
           value={stateFormData.input_text_sub_category}
           type="text"
         />
@@ -145,7 +145,7 @@ export default function Form_Add_Item(props) {
         <input
           onChange={cb_onChange}
           name="input_text_commodity_product"
-          // id="input_text_commodity_product"
+          id="input_text_commodity_product"
           value={stateFormData.input_text_commodity_product}
           type="text"
         />

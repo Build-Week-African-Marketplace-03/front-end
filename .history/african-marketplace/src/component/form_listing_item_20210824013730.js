@@ -22,7 +22,9 @@ export default function Form_Listing_Item(props) {
             return (
               <Form_Item
                 input_object={object}
-                input_cb_set_modifiedItem={props.input_cb_set_modifiedItem}
+                input_cb_set_modifiedItem={
+                  props.input_cb_set_stateArrayItems
+                }
               />
             );
           })}

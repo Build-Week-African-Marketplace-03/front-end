@@ -19,12 +19,7 @@ export default function Form_Listing_Item(props) {
         </thead>
         <tbody>
           {Array.from(props.input_arrayItems).map((object) => {
-            return (
-              <Form_Item
-                input_object={object}
-                input_cb_set_modifiedItem={props.input_cb_set_modifiedItem}
-              />
-            );
+            return <Form_Item input_object={object} input_cb_set_stateArrayItems={} />;
           })}
         </tbody>
       </table>

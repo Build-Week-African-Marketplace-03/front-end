@@ -30,7 +30,7 @@ export default function Form_Item(props) {
             value={props.input_object.name}
             onChange={cb_onChange}
             name="name"
-            type="text"
+            ty
           />
         </td>
         <td>
@@ -38,7 +38,6 @@ export default function Form_Item(props) {
             value={props.input_object.quantity}
             onChange={cb_onChange}
             name="quantity"
-            type="number"
           />
         </td>
         <td>
@@ -46,7 +45,6 @@ export default function Form_Item(props) {
             value={props.input_object.description}
             onChange={cb_onChange}
             name="description"
-            type="text"
           />
         </td>
         <td>
@@ -54,7 +52,6 @@ export default function Form_Item(props) {
             value={props.input_object.commodity_category}
             onChange={cb_onChange}
             name="commodity_category"
-            type="text"
           />
         </td>
         <td>
@@ -62,7 +59,6 @@ export default function Form_Item(props) {
             value={props.input_object.sub_category}
             onChange={cb_onChange}
             name="sub_category"
-            type="text"
           />
         </td>
         <td>
@@ -70,7 +66,6 @@ export default function Form_Item(props) {
             value={props.input_object.commodity_product}
             onChange={cb_onChange}
             name="commodity_product"
-            type="text"
           />
         </td>
       </tr>

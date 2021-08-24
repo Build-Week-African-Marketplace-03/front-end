@@ -17,20 +17,6 @@ export default function ProductPage(props) {
     }
   };
 
-  useEffect(() => {
-    if (modifiedItem) {
-      console.log("product.js, modifiedItem = ", modifiedItem);
-      const temp_array = stateArrayItems;
-      for (let index = 0; index < Array.from(temp_array); index++) {
-        if ((temp_array[index].id = modifiedItem.id)) {
-          temp_array[index] = modifiedItem;
-          break;
-        }
-      }
-      set_modifiedItem(null);
-    }
-  }, [modifiedItem]);
-
   useEffect(
     () => {
       if (stateItem) {
@@ -54,7 +40,7 @@ export default function ProductPage(props) {
 
       <Form_Listing_Item
         input_arrayItems={stateArrayItems}
-        input_cb_set_modifiedItem={set_modifiedItem}
+        input_cb_set_set_modifiedItem={set_stateArrayItems}
       />
 
       {Array.from(stateArrayItems) &&
