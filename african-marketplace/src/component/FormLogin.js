@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import loginSchema from "../validation/loginSchema";
+import { reach } from 'yup'
+
+
+const initialDisabled = true
 
 export default function FormLogin(props) {
+  
+  const [disabled, setDisabled] = useState(initialDisabled)
   
     const {
       values,
       submit,
       change,
-      disabled,
+      // disabled,
       errors
     } = props
    
@@ -20,14 +27,17 @@ export default function FormLogin(props) {
       change(name, value)
     }
      
-
+    useEffect(() => {
+      // 🔥 STEP 9- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
+      loginSchema.isValid(values).then(valid => setDisabled(!valid))
+    }, [values])
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div>
         <label>
           User Name: 
           <input 
-            value={values.userName}
+            value={values.username}
             onChange={onChange}
             name='username'
             type='text'
@@ -45,7 +55,7 @@ export default function FormLogin(props) {
           />
         </label>
       </div>
-      <button>Login</button>
+      <button disabled={disabled}>Login</button>
     </form>
   );
  

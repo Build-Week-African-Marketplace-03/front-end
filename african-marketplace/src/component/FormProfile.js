@@ -61,7 +61,7 @@ export default function FormProfile(props) {
       <label>
         Seller ID:
         <input 
-          value={values.userName}
+          value={values.username}
           onChange={onChange}
           name='username' 
           type='text'
@@ -78,7 +78,7 @@ export default function FormProfile(props) {
       </label>
       <br />
 
-      <button>Submit</button>
+      <button disabled={disabled}>Submit</button>
     </form>
   );
 }

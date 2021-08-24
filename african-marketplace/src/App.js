@@ -8,11 +8,12 @@ import ProductPage from "./page/product";
 import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import React, { useState, UseEffect} from 'react'
+import React, { useState, UseEffect, useEffect} from 'react'
 import { reach } from 'yup'
 import FormLogin from "./component/FormLogin";
 import FormProfile from "./component/FormProfile";
-import schema from './validation/formSchema'
+import profileSchema from './validation/profileFormSchema'
+import loginSchema from "./validation/loginSchema";
 
 const initialProfileValues = {
   sellerName: '',
@@ -33,7 +34,7 @@ const initialItemValues = {
   productCategory: '',
   prodSubCategory:'',
 }
-const initialFormErrors = {
+const initialProfileErrors = {
   sellerName: '',
   username: '',
   email: '',
@@ -46,25 +47,26 @@ const initialFormErrors = {
   prodSubCategory:'',
 }
 
-  const initialDisabled = true
+
+const initialDisabled = true
 
 function App() {
   
   const [profileValues, setProfileValues] = useState(initialProfileValues)
   const [loginValues, setLoginValues] = useState(initialLoginValues)
   const [itemValues, setItemValues] = useState(initialItemValues)
-  const [formErrors, setFormErrors] = useState(initialFormErrors)
+  const [formErrors, setFormErrors] = useState(initialProfileErrors)
   const [disabled, setDisabled] = useState(initialDisabled) 
   
   const validate = (name, value) => {
-    reach(schema, name)
+    reach(profileSchema, name)
       .validate(value)
       .then(() => setFormErrors({ ...formErrors, [name]: ''}))
       .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
   }
 
   const inputChange = (name, value) => {
-    //validate(name, value)
+    validate(name, value)
     setProfileValues({
       ...profileValues, 
       [name]: value
@@ -78,6 +80,7 @@ function App() {
       [name]: value
     })
   }
+
 
   const profileSubmit = () => {
     const newProfile = {
@@ -110,6 +113,11 @@ function App() {
       prodSubCategory: itemValues.productCategory.trim()
     }
   }
+
+  useEffect(() => {
+    profileSchema.isValid(profileValues).then(valid => setDisabled(!valid))
+  },[profileValues])
+  
 
   return (
     <div className="App">
