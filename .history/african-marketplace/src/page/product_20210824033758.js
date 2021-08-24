@@ -79,7 +79,7 @@ export default function ProductPage(props) {
         input_cb_set_modifiedItem={set_modifiedItem}
       />
 
-      <br />
+      
       {Array.from(stateArrayItems) &&
         Array.from(stateArrayItems).map((element) => {
           return (
