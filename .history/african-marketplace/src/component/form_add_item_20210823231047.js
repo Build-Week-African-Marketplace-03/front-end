@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Form_Add_Item(props) {
   const initial_state = {
@@ -14,7 +14,8 @@ export default function Form_Add_Item(props) {
 
   const cb_onChange = (event) => {
     const { checked, value, name, type } = event.target;
-    set_stateFormData({ ...stateFormData, [name]: value });
+    
+    set_stateFormData({ ...stateFormData, [name]: valueToUse });
   };
 
   const cb_onSubmit = (event) => {};

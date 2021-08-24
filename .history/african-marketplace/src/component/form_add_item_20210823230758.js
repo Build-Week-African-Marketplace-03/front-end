@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Form_Add_Item(props) {
   const initial_state = {
-    input_text_name: "",
-    input_number_quantity: "",
-    input_text_description: "",
-    input_text_commodity_category: "",
+    name: "",
+    quantity: "",
+    description: "",
+    commodity_category: "",
     sub_category: "",
     commodity_product: "",
   };
@@ -13,8 +13,16 @@ export default function Form_Add_Item(props) {
   const [stateFormData, set_stateFormData] = useState(initial_state);
 
   const cb_onChange = (event) => {
-    const { checked, value, name, type } = event.target;
-    set_stateFormData({ ...stateFormData, [name]: value });
+    const {
+      name,
+      quantity,
+      description,
+      commodity_category,
+      sub_category,
+      commodity_product,
+    } = event.target;
+    const { value, name } = event.target;
+    set_stateFormData({ ...stateFormData, [name]: valueToUse });
   };
 
   const cb_onSubmit = (event) => {};
@@ -35,8 +43,8 @@ export default function Form_Add_Item(props) {
         Quanity:
         <input
           onChange={cb_onChange}
-          name="input_number_quantity"
-          id="input_number_quantity"
+          name="input_text_quantity"
+          id="input_text_quantity"
           value={stateFormData.quantity}
           type="number"
         />
@@ -48,7 +56,6 @@ export default function Form_Add_Item(props) {
           name="input_text_description"
           id="input_text_description"
           value={stateFormData.description}
-          type="text"
         />
       </label>
       <label>
@@ -58,7 +65,6 @@ export default function Form_Add_Item(props) {
           name="input_text_commodity_category"
           id="input_text_commodity_category"
           value={stateFormData.commodity_category}
-          type="text"
         />
       </label>
       <label>
@@ -68,7 +74,6 @@ export default function Form_Add_Item(props) {
           name="input_text_sub_category"
           id="input_text_sub_category"
           value={stateFormData.sub_category}
-          type="text"
         />
       </label>
       <label>
@@ -78,9 +83,10 @@ export default function Form_Add_Item(props) {
           name="input_text_commodity_product"
           id="input_text_commodity_product"
           value={stateFormData.commodity_product}
-          type="text"
         />
       </label>
+      <br />
+
       <button>Submit</button>
     </form>
   );
