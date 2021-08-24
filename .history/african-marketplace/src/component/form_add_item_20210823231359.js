@@ -6,8 +6,8 @@ export default function Form_Add_Item(props) {
     input_number_quantity: "",
     input_text_description: "",
     input_text_commodity_category: "",
-    input_text_sub_category: "",
-    input_text_commodity_product: "",
+    sub_category: "",
+    commodity_product: "",
   };
 
   const [stateFormData, set_stateFormData] = useState(initial_state);
@@ -18,10 +18,9 @@ export default function Form_Add_Item(props) {
   };
 
   const cb_onSubmit = (event) => {
-    event.preventDefault();
 
-    //reset form
-    set_stateFormData(initial_state);
+
+    
   };
 
   return (
@@ -44,7 +43,6 @@ export default function Form_Add_Item(props) {
           id="input_number_quantity"
           value={stateFormData.quantity}
           type="number"
-          min="1"
         />
       </label>
       <label>

@@ -23,12 +23,11 @@ export default function ProductPage(props) {
   return (
     <div>
       <h2>Product Page</h2>
-      <p>Length of array_items is {array_items.length}</p>
 
       <Form_Add_Item input_cb_set_stateItem={set_stateItem} />
       <br />
 
-      {/* <Form_Listing_Item /> */}
+      <Form_Listing_Item />
     </div>
   );
 }

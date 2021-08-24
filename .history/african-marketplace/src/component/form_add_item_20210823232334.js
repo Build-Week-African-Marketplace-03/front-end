@@ -44,7 +44,6 @@ export default function Form_Add_Item(props) {
           id="input_number_quantity"
           value={stateFormData.quantity}
           type="number"
-          min="1"
         />
       </label>
       <label>

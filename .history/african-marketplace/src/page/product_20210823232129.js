@@ -7,14 +7,7 @@ export default function ProductPage(props) {
 
   useEffect(
     () => {
-      if (stateItem) {
-        //push item into an array
-        array_items.push(stateItem);
-        //reset stateItem to null
-        set_stateItem(null);
-        //debug
-        console.log("array_items.length = ", array_items.length);
-      }
+      if stateItem && array_items.push(stateItem);
     },
     //call ueseEffect when the state of stateItem change
     [stateItem]
@@ -23,12 +16,11 @@ export default function ProductPage(props) {
   return (
     <div>
       <h2>Product Page</h2>
-      <p>Length of array_items is {array_items.length}</p>
 
       <Form_Add_Item input_cb_set_stateItem={set_stateItem} />
       <br />
 
-      {/* <Form_Listing_Item /> */}
+      <Form_Listing_Item />
     </div>
   );
 }

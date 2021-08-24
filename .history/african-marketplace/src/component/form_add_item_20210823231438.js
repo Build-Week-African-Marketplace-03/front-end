@@ -6,23 +6,20 @@ export default function Form_Add_Item(props) {
     input_number_quantity: "",
     input_text_description: "",
     input_text_commodity_category: "",
-    input_text_sub_category: "",
-    input_text_commodity_product: "",
+    sub_category: "",
+    commodity_product: "",
   };
 
   const [stateFormData, set_stateFormData] = useState(initial_state);
+
+  const_cb_resetForm = () => {};
 
   const cb_onChange = (event) => {
     const { checked, value, name, type } = event.target;
     set_stateFormData({ ...stateFormData, [name]: value });
   };
 
-  const cb_onSubmit = (event) => {
-    event.preventDefault();
-
-    //reset form
-    set_stateFormData(initial_state);
-  };
+  const cb_onSubmit = (event) => {};
 
   return (
     <form class="flex-row" onSubmit={cb_onSubmit}>
@@ -44,7 +41,6 @@ export default function Form_Add_Item(props) {
           id="input_number_quantity"
           value={stateFormData.quantity}
           type="number"
-          min="1"
         />
       </label>
       <label>
