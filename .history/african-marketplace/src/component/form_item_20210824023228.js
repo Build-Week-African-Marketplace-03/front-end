@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 
 export default function Form_Item(props) {
   const cb_onChange = (event) => {
-    const { value, name } = event.target;
+    //props.input_cb_set_modifiedItem
 
+    const { value, name } = event.target;
     // console.log(`name = ${name}, value = ${value}, `);
 
     //update the props.input_object value

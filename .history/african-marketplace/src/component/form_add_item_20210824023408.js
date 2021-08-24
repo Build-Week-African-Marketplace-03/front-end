@@ -52,7 +52,7 @@ export default function Form_Add_Item(props) {
 
   //------------------------------cb_onChange function---------------------------
   const cb_onChange = (event) => {
-    const { value, name } = event.target;
+    const {value, name, type } = event.target;
     set_stateFormData({ ...stateFormData, [name]: value });
     cb_setFormErrors(name, value);
   };
