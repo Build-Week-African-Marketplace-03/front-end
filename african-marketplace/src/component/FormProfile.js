@@ -6,7 +6,7 @@ import profileFormSchema from "../validation/profileFormSchema";
       
     
   const FormProfile = () => (
-
+  
      
    <div>
     <Formik
@@ -85,7 +85,7 @@ import profileFormSchema from "../validation/profileFormSchema";
           value={props.values.password} 
           onChange={props.handleChange}
           name='password'
-          type='text'
+          type='password'
           />
           <div>{props.errors.password}</div>
       </label>
