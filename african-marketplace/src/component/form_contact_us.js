@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Form_Contact_Us(props) {
   return (
-    <form class="flex-column">
+    <form className="flex-column">
       <label>
         Name:
         <input value="" />

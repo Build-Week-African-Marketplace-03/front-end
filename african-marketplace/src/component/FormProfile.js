@@ -9,6 +9,7 @@ import profileFormSchema from "../validation/profileFormSchema";
   
      
    <div>
+
     <Formik
       initialValues={{
         sellerName: '',
@@ -28,7 +29,7 @@ import profileFormSchema from "../validation/profileFormSchema";
       validationSchema={profileFormSchema}
       >
     {props => (
-    <form class="flex-column" onSubmit={props.handleSubmit}>
+    <form className="flex-column" onSubmit={props.handleSubmit}>
       <label>
         Name:
         <input 
@@ -91,8 +92,7 @@ import profileFormSchema from "../validation/profileFormSchema";
       </label>
       <br />
       <div className='form-submit'>
-        <button type='submit '>Submit</button>
-        
+        <button type='submit' >Submit</button>
       </div>
     </form>
     )}

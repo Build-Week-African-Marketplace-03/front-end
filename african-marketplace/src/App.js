@@ -4,9 +4,11 @@ import NavigationBar from "./component/navigation-bar";
 import Page404 from "./page/404";
 import Footer from "./component/footer";
 import AboutPage from "./page/about";
-import ProductPage from "./page/product";
+import Product from "./page/product";
+import Inventory from "./page/inventory";
 import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
+import Specific_Product from "./page/specific_product";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import React from 'react'
 import FormLogin from "./component/FormLogin";
@@ -28,7 +30,10 @@ function App() {
               <FormLogin />
             </Route>
             <Route path="/product">
-              <ProductPage />
+              <Product />
+            </Route>
+            <Route path="/inventory">
+              <Inventory />
             </Route>
             <Route path="/profile">
               <FormProfile />
@@ -52,4 +57,18 @@ function App() {
   );
 }
 
+
 export default App;
+
+/*
+
+the inventory page is composed of the below components:
+...form_inventory_add_item.js
+...form_inventory_edit_item.js
+...form_inventory_inventory_sheet.js
+
+the product page is composed of the below components:
+...item_for_sale.js
+...listing_items_for_sales.js
+
+*/
