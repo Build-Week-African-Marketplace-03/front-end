@@ -20,6 +20,7 @@ const profileFormSchema = yup.object().shape({
         .string()
         .matches(phoneRegExp, 'Must be a valid phone number')
         .required('Phone Number is required')
+        .min(10, 'Must be a valid phone number')
         .max(10, 'Must be a valid phone number'),
     address: yup
         .string()

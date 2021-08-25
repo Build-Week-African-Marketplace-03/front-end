@@ -8,12 +8,10 @@ import ProductPage from "./page/product";
 import ProfilePage from "./page/profile";
 import ContactPage from "./page/contact";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import React, { useState, useEffect} from 'react'
-import { reach } from 'yup'
+import React from 'react'
 import FormLogin from "./component/FormLogin";
 import FormProfile from "./component/FormProfile";
-import schema from './validation/profileFormSchema'
-import loginSchema from "./validation/loginSchema";
+
 
 function App() {
     
