@@ -7,7 +7,7 @@ const loginSchema = yup.object().shape({
         .required(''),
     password: yup 
         .string()
-        .required()
+        .required(),
 })
 
 export default loginSchema

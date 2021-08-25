@@ -1,6 +1,8 @@
 import * as yup from 'yup'
 
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 const profileFormSchema = yup.object().shape({
+    
     sellerName: yup
         .string()
         .trim()
@@ -8,20 +10,24 @@ const profileFormSchema = yup.object().shape({
     username: yup   
         .string()
         .trim()
-        .required(''),
+        .required('Username is required')
+        .min(2,'must be at least 2 characters'),
     email: yup
         .string()
         .email()
-        .required(),    
+        .required('Email is required'),    
     phoneNumber: yup
         .string()
-        .required(),
+        .matches(phoneRegExp, 'Must be a valid phone number')
+        .required('Phone Number is required')
+        .min(10, 'Must be a valid phone number')
+        .max(10, 'Must be a valid phone number'),
     address: yup
         .string()
-        .required(),
+        .required('Address is required'),
     password: yup 
         .string()
-        .required()
+        .required('Password is required')
 })
 
 

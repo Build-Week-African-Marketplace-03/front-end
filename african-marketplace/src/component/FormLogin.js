@@ -1,62 +1,56 @@
 import React, { useState, useEffect } from "react";
+import { Formik } from "formik";
 import loginSchema from "../validation/loginSchema";
-import { reach } from 'yup'
 
 
-const initialDisabled = true
 
-export default function FormLogin(props) {
+
+const FormLogin = () => ( 
+  <div>
+   <Formik
+   initialValues={{
+     username: '',
+     password: '',
+   }}
   
-  const [disabled, setDisabled] = useState(initialDisabled)
+   onSubmit={(values, { resetForm }) => { 
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+    },1000)
+  resetForm()
+  }}
+  validationSchema={loginSchema}
+  >
   
-    const {
-      values,
-      submit,
-      change,
-      // disabled,
-      errors
-    } = props
-   
-    const onSubmit = evt => {
-      evt.preventDefault()
-      submit()
-    }
-   
-    const onChange = evt => {
-      const { name, value } = evt.target
-      change(name, value)
-    }
-     
-    useEffect(() => {
-      // 🔥 STEP 9- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
-      loginSchema.isValid(values).then(valid => setDisabled(!valid))
-    }, [values])
-  return (
-    <form onSubmit={onSubmit}>
+  {props => ( 
+    <form onSubmit={props.handleSubmit}>
       <div>
         <label>
           User Name: 
           <input 
-            value={values.username}
-            onChange={onChange}
+            value={props.values.username}
+            onChange={props.handleChange}
             name='username'
             type='text'
-          />
+            />
         </label>
       </div>
       <div>
         <label>
           Password
           <input 
-            value={values.password}
-            onChange={onChange}
+            value={props.values.password}
+            onChange={props.handleChange}
             name='password'
             type='password'
-          />
+            />
         </label>
       </div>
-      <button disabled={disabled}>Login</button>
+      <button type='submit'>Login</button>
     </form>
-  );
- 
-}
+  )}
+ </Formik>
+  </div>
+)
+
+export default FormLogin
