@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import Form_Contact_Us from "../component/form_contact_us";
+import Form_Contact_Us from "../component/FormContact";
 
 export default function ContactPage(props) {
   return (

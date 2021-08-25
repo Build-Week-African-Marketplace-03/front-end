@@ -13,7 +13,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import React from 'react'
 import FormLogin from "./component/FormLogin";
 import FormProfile from "./component/FormProfile";
-
+import FormContact from './component/FormContact'
 
 function App() {
     
@@ -42,7 +42,7 @@ function App() {
               <AboutPage />
             </Route>
             <Route path="/Contact">
-              <ContactPage />
+              <FormContact />
             </Route>
             <Route>
               <Page404 />
