@@ -14,11 +14,11 @@
 }
 
 .homeMainDiv {
-  padding-left: 15%;
+  padding-left: 100px;
   margin-top: 4%;
   padding-top: 5%;
   padding-bottom: 5%;
   background-color: #deedd6;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   color: #707070;
 }
