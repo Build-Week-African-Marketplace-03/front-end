@@ -3,6 +3,8 @@ import FormLogin from "../component/FormLogin"
 import ButtonStyle from "../css/Button"
 import Button from "../css/Button"
 
+const save = "saved"
+
 const homeStyle = {
   backgroundColor: "#deedd6",
 }
