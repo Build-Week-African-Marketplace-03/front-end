@@ -4,7 +4,7 @@ const profileFormSchema = yup.object().shape({
     sellerName: yup
         .string()
         .trim()
-        .required(),
+        .required('Name is required'),
     username: yup   
         .string()
         .trim()

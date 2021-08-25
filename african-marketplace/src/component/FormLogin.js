@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
+import loginSchema from "../validation/loginSchema";
 
 
 
@@ -18,6 +19,7 @@ const FormLogin = () => (
     },1000)
   resetForm()
   }}
+  validationSchema={loginSchema}
   >
   
   {props => ( 

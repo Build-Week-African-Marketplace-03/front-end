@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Formik } from "formik";
+import { ErrorMessage, Formik } from "formik";
+import profileFormSchema from "../validation/profileFormSchema";
 
 
       
@@ -24,6 +25,7 @@ import { Formik } from "formik";
         },1000)
       resetForm()
       }}
+      validationSchema={profileFormSchema}
       >
     {props => (
     <form class="flex-column" onSubmit={props.handleSubmit}>
@@ -35,6 +37,7 @@ import { Formik } from "formik";
           name='sellerName'
           type='text' 
           />
+          <div>{props.errors.sellerName}</div>
       </label>
       <label>
         Email:
@@ -44,6 +47,7 @@ import { Formik } from "formik";
           name='email'
           type='email' 
           />
+          <div>{props.errors.email}</div>
       </label>
       <label>
         Phone Number:
@@ -53,6 +57,7 @@ import { Formik } from "formik";
           name='phoneNumber'
           type='tel'
           />
+          <div>{props.errors.phoneNumber}</div>
       </label>
       <label>
         Address:
@@ -62,6 +67,7 @@ import { Formik } from "formik";
          name='address'
          type='address' 
          />
+         <div>{props.errors.address}</div>
       </label>
       <label>
         Seller ID:
@@ -71,6 +77,7 @@ import { Formik } from "formik";
           name='username' 
           type='text'
           />
+          <div>{props.errors.username}</div>
       </label>
       <label>
         Password
@@ -80,11 +87,12 @@ import { Formik } from "formik";
           name='password'
           type='text'
           />
+          <div>{props.errors.password}</div>
       </label>
       <br />
       <div className='form-submit'>
         <button type='submit '>Submit</button>
-        <div>{props.errors.name}</div>
+        
       </div>
     </form>
     )}
