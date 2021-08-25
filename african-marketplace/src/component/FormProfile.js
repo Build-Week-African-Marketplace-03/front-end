@@ -1,87 +1,95 @@
-import React from "react";
-import { Formik } from 'formik'
-
-export default function FormProfile(props) {
- const {
-   values,
-   submit,
-   change,
-   disabled,
-   errors
- } = props
-
- const onSubmit = evt => {
-   evt.preventDefault()
-   submit()
- }
-
- const onChange = evt => {
-   const { name, value } = evt.target
-   change(name, value)
- }
+import React, { useState } from "react";
+import { Formik } from "formik";
 
 
-  return (
-    <form class="flex-column" onSubmit={onSubmit}>
+      
+    
+  const FormProfile = () => (
+
+     
+   <div>
+    <Formik
+      initialValues={{
+        sellerName: '',
+        username: '',
+        email: '',
+        phoneNumber: '',
+        address: '',
+        password: '',
+      }}
+      
+      onSubmit={(values, { resetForm }) => { 
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+        },1000)
+      resetForm()
+      }}
+      >
+    {props => (
+    <form class="flex-column" onSubmit={props.handleSubmit}>
       <label>
         Name:
         <input 
-          value={values.sellerName}
-          onChange={onChange}
+          value={props.values.sellerName}
+          onChange={props.handleChange}
           name='sellerName'
           type='text' 
-        />
+          />
       </label>
       <label>
         Email:
         <input 
-          value= {values.email}
-          onChange={onChange}
+          value= {props.values.email}
+          onChange={props.handleChange}
           name='email'
           type='email' 
-        />
+          />
       </label>
       <label>
         Phone Number:
         <input 
-          value={values.phoneNumber}
-          onChange={onChange}
+          value={props.values.phoneNumber}
+          onChange={props.handleChange}
           name='phoneNumber'
           type='tel'
-        />
+          />
       </label>
       <label>
         Address:
         <input 
-         value={values.address}
-         onChange={onChange}
+         value={props.values.address}
+         onChange={props.handleChange}
          name='address'
          type='address' 
-        />
+         />
       </label>
       <label>
         Seller ID:
         <input 
-          value={values.username}
-          onChange={onChange}
+          value={props.values.username}
+          onChange={props.handleChange}
           name='username' 
           type='text'
-        />
+          />
       </label>
       <label>
         Password
         <input 
-          value={values.password} 
-          onChange={onChange}
+          value={props.values.password} 
+          onChange={props.handleChange}
           name='password'
           type='text'
-        />
+          />
       </label>
       <br />
       <div className='form-submit'>
-        <button disabled={disabled}>Submit</button>
-        <div>{errors.name}</div>
+        <button type='submit '>Submit</button>
+        <div>{props.errors.name}</div>
       </div>
     </form>
-  );
-}
+    )}
+    </Formik>
+   </div>
+  )
+
+export default FormProfile
