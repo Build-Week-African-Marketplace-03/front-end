@@ -1,4 +1,24 @@
+/* divs inside green bg*/
+/* div {
+  border: 1px solid black;
+} */
+
+.topLeftDiv {
+  text-align: left;
+  width: 65%;
+}
+
+.bottomLeftDiv {
+  text-align: left;
+  width: 65%;
+}
+
 .homeMainDiv {
+  padding-left: 15%;
+  margin-top: 4%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   background-color: #deedd6;
-  margin: 1px solid black;
+  border: 1px solid black;
+  color: #707070;
 }

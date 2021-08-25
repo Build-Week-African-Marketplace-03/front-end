@@ -2,28 +2,19 @@ import React from "react"
 import FormLogin from "../component/FormLogin"
 import ButtonStyle from "../css/Button"
 import Button from "../css/Button"
-
-const save = "saved"
-
-const homeStyle = {
-  backgroundColor: "#deedd6",
-}
+import "../css/home.css"
 
 export default function HomePage(props) {
   return (
     <>
-      <nav>
-        <a href="/" style={{ color: "777", textDecoration: "none" }}>
-          Log in
-        </a>
-        <Button type="secondary">Sign up</Button>
-      </nav>
-      <div classname="homeMainDiv" style={homeStyle}>
-        <h2>
-          Anyone can start selling today - <br></br>it really is that simple
-        </h2>
-        <div></div>
-        <div>
+      <div className="homeMainDiv">
+        <div className="topLeftDiv ">
+          <h2>
+            Anyone can start selling today - <br></br>it really is that simple
+          </h2>
+        </div>
+
+        <div className="bottomLeftDiv">
           <p>African women are cut off from the global economy.</p>
           <p>They have produce, but no opportunity to sell it.</p>
           <p>
