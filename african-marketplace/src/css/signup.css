@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  border: 1px solid black;
+
   height: 500px;
-  margin-top: 2vh;
+  margin-top: 4vh;
 }
 
 .signUpCard {
@@ -16,5 +16,31 @@
 }
 
 .signIn {
+  margin-top: 10vh;
+  font-size: 30px;
   color: #339615;
+  margin-bottom: 5vh;
+}
+.submitSI {
+  padding: 6px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  background-color: #7bed8d;
+  font-weight: 550;
+  width: 80%;
+}
+
+/*form input boxes */
+.nameBox {
+  width: 80vh;
+  background-color: #f0f4f8;
+  border: none;
+  border-radius: 2px;
+  padding: 3px;
+  padding-left: 15px;
+  margin: 5px;
+  color: blue;
+  font-weight: 500;
 }
