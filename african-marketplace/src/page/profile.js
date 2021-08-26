@@ -22,7 +22,7 @@ const initialFormErrors = {
   password: ''
 }
 
-export default function ProfilePage(props) {
+export default function Signup(props) {
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)

@@ -6,7 +6,7 @@ import Footer from "./component/footer"
 import AboutPage from "./page/about"
 import Product from "./page/product"
 import Inventory from "./page/inventory"
-import ProfilePage from "./page/profile"
+import Signup from "./page/profile"
 import ContactPage from "./page/contact"
 import Specific_Product from "./page/specific_product"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
@@ -37,8 +37,8 @@ function App() {
             <Route path="/inventory">
               <Inventory />
             </Route>
-            <Route path="/profile">
-              <ProfilePage />
+            <Route path="/signup">
+              <Signup />
             </Route>
             <Route path="/About">
               <AboutPage />
