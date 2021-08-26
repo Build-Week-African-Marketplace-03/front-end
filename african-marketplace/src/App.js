@@ -12,7 +12,7 @@ import Specific_Product from "./page/specific_product"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Login from './page/login'
 import FormContact from "./component/FormContact"
-
+import PrivateRoute from './utilities/PrivateRoute'
 
 
 function App() {
@@ -33,9 +33,7 @@ function App() {
             <Route path="/product">
               <Product />
             </Route>
-            <Route path="/inventory">
-              <Inventory />
-            </Route>
+            <PrivateRoute path="/inventory" component={Inventory}/>
             <Route path="/signup">
               <Signup />
             </Route>

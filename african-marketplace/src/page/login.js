@@ -1,42 +1,38 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router";
 
-
-const initialFormValues = {
-  username: '',
-  password: ''
-}
 
 
 export default function Login(props) {
-  const [formValues, setFormValues] = useState(initialFormValues)
 
-  const inputChange = (name, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value
+  const [initialLogin, setInitialLogin] = useState({
+      username: '',
+      password: ''
+  })
+
+  const { push } = useHistory();
+
+  const onChange = (e) => {
+    setInitialLogin({
+      ...initialLogin,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    axios.post('https://bw-172-african-marketplace.herokuapp.com/login', initialLogin)
+    .then(res => {
+      localStorage.setItem('token', res.data.payload);
+      push('/inventory');
+    })
+    .catch(err => {
+      console.log(err)
     })
   }
 
-  const onChange = evt => {
-    const { name, value } = evt.target
-    inputChange(name, value)
-  }
-
-  const formSubmit = () => {
-    const login = {
-      username: formValues.username.trim(),
-      email: formValues.username.trim()
-    }
-    setTimeout(() => {
-      alert(JSON.stringify(login, null, 2))
-    }, 1000)
-    setFormValues(initialFormValues)
-  }
-
-  const onSubmit = evt => {
-    evt.preventDefault()
-    formSubmit()
-  }
+  const {username, password} = initialLogin;
 
   return (
     <div className="loginMainDiv signUpMainDiv">
@@ -47,7 +43,7 @@ export default function Login(props) {
           <div>
             <label>
               <input
-                value={formValues.username}
+                value={username}
                 onChange={onChange}
                 name="username"
                 type="text"
@@ -59,7 +55,7 @@ export default function Login(props) {
           <div>
             <label>
               <input
-                value={formValues.password}
+                value={password}
                 onChange={onChange}
                 name="password"
                 type="password"
