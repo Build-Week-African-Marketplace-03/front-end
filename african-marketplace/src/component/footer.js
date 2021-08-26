@@ -13,7 +13,10 @@ export default function Footer(props) {
           </Container>
         </Navbar>
       </div>
-      <p>Copyright 2021</p>
+      <div className="copyright">
+        AfriCart and the AfriCart logo are trademarks of AfriCart Inc,
+        registered in the U.S. and other countries. Copyright 2021
+      </div>
     </div>
   )
 }

@@ -1,24 +1,52 @@
-div {
-  /* border: 1px solid black; */
+/* div {
+border: 1px solid black;
+} */
+.navBar {
+  display: flex;
+
+  width: 100%;
+  padding: 0px 30px 0px 30px;
 }
 
 img {
   width: 20px;
 }
 
-.logoName {
-  padding-right: 40px;
+.logoDiv {
+  display: flex;
+
+  align-items: baseline;
+  padding-right: 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   border-right: 1px solid rgb(186, 186, 186);
-  padding-left: 4px;
 }
+
+.navMainDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.navLeftDiv {
+  display: flex;
+}
+
 .navLinks {
+  display: flex;
+  color: #72767e;
+}
+
+.navRight {
   display: flex;
 }
 
 .navLink {
-  color: black;
+  color: #72767e;
+}
+
+.login {
+  color: #343538;
+  font-weight: 600;
 }
 
 .profile {
@@ -29,4 +57,7 @@ img {
   color: white;
   background-color: #0aad0a;
   font-weight: 550;
+}
+.navRightDiv {
+  display: flex;
 }

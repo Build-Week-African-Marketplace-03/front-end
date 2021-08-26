@@ -7,3 +7,9 @@
 .footerMainDiv {
   /* border: 1px solid black; */
 }
+
+.copyright {
+  color: #72767e;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
