@@ -10,9 +10,9 @@ export default function HomePage(props) {
       <div className="homeMainDiv">
         <div className="leftSide">
           <div className="topLeftDiv ">
-            <h2>
+            <p className="topLeftText">
               Anyone can start selling today - <br></br>it really is that simple
-            </h2>
+            </p>
           </div>
 
           <div className="bottomLeftDiv">
@@ -26,7 +26,10 @@ export default function HomePage(props) {
             </p>
           </div>
         </div>
-        <img src="/images/map.png" className="map"></img>
+        <div className="rightSide">
+          <img src="/images/map.png" className="map"></img>
+          <img src="/images/fruits.png" className="fruits"></img>
+        </div>
       </div>
     </>
   )

@@ -11,4 +11,5 @@ img {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   border-right: 1px solid rgb(186, 186, 186);
+  padding-left: 4px;
 }
