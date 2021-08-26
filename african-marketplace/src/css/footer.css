@@ -1,0 +1,9 @@
+.footerDiv {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.footerMainDiv {
+  /* border: 1px solid black; */
+}

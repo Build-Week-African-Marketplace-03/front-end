@@ -1,22 +1,21 @@
-import "./App.css";
-import HomePage from "./page/home";
-import NavigationBar from "./component/navigation-bar";
-import Page404 from "./page/404";
-import Footer from "./component/footer";
-import AboutPage from "./page/about";
-import Product from "./page/product";
-import Inventory from "./page/inventory";
-import ProfilePage from "./page/profile";
-import ContactPage from "./page/contact";
-import Specific_Product from "./page/specific_product";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import React from 'react'
-import FormLogin from "./component/FormLogin";
-import FormProfile from "./component/FormProfile";
-import FormContact from './component/FormContact'
+import "./App.css"
+import HomePage from "./page/home"
+import NavigationBar from "./component/navigation-bar"
+import Page404 from "./page/404"
+import Footer from "./component/footer"
+import AboutPage from "./page/about"
+import Product from "./page/product"
+import Inventory from "./page/inventory"
+import ProfilePage from "./page/profile"
+import ContactPage from "./page/contact"
+import Specific_Product from "./page/specific_product"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import React from "react"
+import FormLogin from "./component/FormLogin"
+import FormProfile from "./component/FormProfile"
+import FormContact from "./component/FormContact"
 
 function App() {
-    
   return (
     <div className="App">
       <header>
@@ -27,6 +26,8 @@ function App() {
           <Switch>
             <Route exact path="/">
               <HomePage />
+            </Route>
+            <Route path="/login">
               <FormLogin />
             </Route>
             <Route path="/product">
@@ -54,11 +55,10 @@ function App() {
         <Footer />
       </footer>
     </div>
-  );
+  )
 }
 
-
-export default App;
+export default App
 
 /*
 

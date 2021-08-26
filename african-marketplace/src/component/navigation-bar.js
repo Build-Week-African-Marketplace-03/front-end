@@ -23,6 +23,9 @@ export default function NavigationBar(props) {
           <Nav.Link href="/profile" className="navLink profile">
             Sign up
           </Nav.Link>
+          <Nav.Link href="/login" className="navLink Login">
+            Login
+          </Nav.Link>
         </div>
       </Container>
     </Navbar>

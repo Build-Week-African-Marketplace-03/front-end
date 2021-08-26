@@ -6,7 +6,7 @@ import "../css/signup.css"
 const FormProfile = () => (
   <div className="signUpMainDiv">
     <div className="signUpCard">
-      <div className="signIn">Sign In</div>
+      <div className="signIn">Create Account</div>
       <Formik
         initialValues={{
           sellerName: "",
@@ -34,7 +34,7 @@ const FormProfile = () => (
                 name="sellerName"
                 type="text"
                 className="nameBox"
-                placeholder="Name"
+                placeholder="☺ Name"
               />
               <div>{props.errors.sellerName}</div>
             </label>
@@ -46,7 +46,7 @@ const FormProfile = () => (
                 name="email"
                 type="email"
                 className="nameBox"
-                placeholder="Email"
+                placeholder="✉ Email"
               />
               <div>{props.errors.email}</div>
             </label>
@@ -58,7 +58,7 @@ const FormProfile = () => (
                 name="phoneNumber"
                 type="tel"
                 className="nameBox"
-                placeholder="Phone Number"
+                placeholder="☏ Phone Number"
               />
               <div>{props.errors.phoneNumber}</div>
             </label>
@@ -70,7 +70,7 @@ const FormProfile = () => (
                 name="address"
                 type="address"
                 className="nameBox"
-                placeholder="Address"
+                placeholder="⌂ Address"
               />
               <div>{props.errors.address}</div>
             </label>
@@ -82,7 +82,7 @@ const FormProfile = () => (
                 name="username"
                 type="text"
                 className="nameBox"
-                placeholder="Seller ID"
+                placeholder="♯ Seller ID"
               />
               <div>{props.errors.username}</div>
             </label>
@@ -94,7 +94,7 @@ const FormProfile = () => (
                 name="password"
                 type="password"
                 className="nameBox"
-                placeholder="Password"
+                placeholder="☑ Password"
               />
               <div>{props.errors.password}</div>
             </label>
