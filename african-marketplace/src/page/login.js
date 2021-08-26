@@ -22,7 +22,7 @@ export default function Login(props) {
 
   const onSubmit = e => {
     e.preventDefault();
-    axios.post('https://bw-172-african-marketplace.herokuapp.com/login', initialLogin)
+    axios.post('https://fakestoreapi.com/auth/login', initialLogin)
     .then(res => {
       localStorage.setItem('token', res.data.payload);
       push('/inventory');
