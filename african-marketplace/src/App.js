@@ -11,7 +11,7 @@ import ContactPage from "./page/contact"
 import Specific_Product from "./page/specific_product"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import React from "react"
-import FormLogin from "./component/FormLogin"
+import Login from './page/login'
 import FormProfile from "./component/FormProfile"
 import FormContact from "./component/FormContact"
 
@@ -30,7 +30,7 @@ function App() {
               <HomePage />
             </Route>
             <Route path="/login">
-              <FormLogin />
+              <Login />
             </Route>
             <Route path="/product">
               <Product />
