@@ -1,6 +1,6 @@
-import React from "react";
-import { Form } from "react-bootstrap";
-import Form_Profile from "../component/FormProfile";
+import React from "react"
+import { Form } from "react-bootstrap"
+import Form_Profile from "../component/FormProfile"
 export default function ProfilePage(props) {
   return (
     <div>
@@ -8,5 +8,5 @@ export default function ProfilePage(props) {
 
       <Form_Profile />
     </div>
-  );
+  )
 }

@@ -13,3 +13,19 @@ img {
   border-right: 1px solid rgb(186, 186, 186);
   padding-left: 4px;
 }
+.navLinks {
+  display: flex;
+}
+
+.navLink {
+  color: black;
+}
+
+.profile {
+  padding: 6px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #7bed8d;
+}

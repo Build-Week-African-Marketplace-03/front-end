@@ -13,9 +13,17 @@ export default function NavigationBar(props) {
             AfriCart
           </Navbar.Brand>
         </div>
-        <Nav.Link href="/product">Product</Nav.Link>
-        <Nav.Link href="/inventory">Inventory</Nav.Link>
-        <Nav.Link href="/profile">Profile</Nav.Link>
+        <div className="navLinks">
+          <Nav.Link href="/product" className="navLink">
+            Product
+          </Nav.Link>
+          <Nav.Link href="/inventory" className="navLink">
+            Inventory
+          </Nav.Link>
+          <Nav.Link href="/profile" className="navLink profile">
+            Profile
+          </Nav.Link>
+        </div>
       </Container>
     </Navbar>
   )
