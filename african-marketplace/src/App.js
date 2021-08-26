@@ -12,7 +12,6 @@ import Specific_Product from "./page/specific_product"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import React from "react"
 import Login from './page/login'
-import FormProfile from "./component/FormProfile"
 import FormContact from "./component/FormContact"
 
 
@@ -39,7 +38,7 @@ function App() {
               <Inventory />
             </Route>
             <Route path="/profile">
-              <FormProfile />
+              <ProfilePage />
             </Route>
             <Route path="/About">
               <AboutPage />
