@@ -10,7 +10,6 @@ import Signup from "./page/profile"
 import ContactPage from "./page/contact"
 import Specific_Product from "./page/specific_product"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import React from "react"
 import Login from './page/login'
 import FormContact from "./component/FormContact"
 
