@@ -21,7 +21,7 @@ export default function NavigationBar(props) {
             Inventory
           </Nav.Link>
           <Nav.Link href="/profile" className="navLink profile">
-            Profile
+            Sign up
           </Nav.Link>
         </div>
       </Container>
