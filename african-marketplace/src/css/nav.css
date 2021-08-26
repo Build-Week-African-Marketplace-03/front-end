@@ -1,0 +1,63 @@
+/* div {
+border: 1px solid black;
+} */
+.navBar {
+  display: flex;
+
+  width: 100%;
+  padding: 0px 30px 0px 30px;
+}
+
+img {
+  width: 20px;
+}
+
+.logoDiv {
+  display: flex;
+
+  align-items: baseline;
+  padding-right: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  border-right: 1px solid rgb(186, 186, 186);
+}
+
+.navMainDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.navLeftDiv {
+  display: flex;
+}
+
+.navLinks {
+  display: flex;
+  color: #72767e;
+}
+
+.navRight {
+  display: flex;
+}
+
+.navLink {
+  color: #72767e;
+}
+
+.login {
+  color: #343538;
+  font-weight: 600;
+}
+
+.profile {
+  padding: 6px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  background-color: #0aad0a;
+  font-weight: 550;
+}
+.navRightDiv {
+  display: flex;
+}

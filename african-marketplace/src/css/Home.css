@@ -1,4 +1,52 @@
+/* divs inside green bg*/
+div {
+  /* border: 1px solid black; */
+}
+
+.topLeftDiv {
+  text-align: left;
+}
+
+.topLeftText {
+  font-size: 50px;
+  color: #343538;
+  font-weight: 450;
+}
+
+.bottomLeftDiv {
+  text-align: left;
+}
+
 .homeMainDiv {
+  display: flex;
+  padding-left: 100px;
+  margin-top: 25px;
+  padding-top: 5%;
+  padding-bottom: 5vh;
+  margin-bottom: 10vh;
   background-color: #deedd6;
-  margin: 1px solid black;
+  /* border: 1px solid black; */
+  color: #707070;
+}
+
+.leftSide {
+  width: 600px;
+}
+
+.rightSide {
+  right: 100px;
+  position: absolute;
+  width: 50%;
+}
+.map {
+  width: auto;
+  height: 400px;
+  padding-right: 30px;
+  position: absolute;
+}
+.fruits {
+  width: auto;
+  position: absolute;
+  height: 400px;
+  padding-right: 30px;
 }
