@@ -30,7 +30,7 @@ export default function NavigationBar(props) {
             <Nav.Link href="/login" className="login">
               Log in
             </Nav.Link>
-            <Nav.Link href="/profile" className="navLink profile">
+            <Nav.Link href="/signup" className="navLink profile">
               Sign up
             </Nav.Link>
           </div>

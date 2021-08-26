@@ -6,13 +6,12 @@ import Footer from "./component/footer"
 import AboutPage from "./page/about"
 import Product from "./page/product"
 import Inventory from "./page/inventory"
-import ProfilePage from "./page/profile"
+import Signup from "./page/profile"
 import ContactPage from "./page/contact"
 import Specific_Product from "./page/specific_product"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import React from "react"
-import FormLogin from "./component/FormLogin"
-import FormProfile from "./component/FormProfile"
+import Login from './page/login'
 import FormContact from "./component/FormContact"
 
 
@@ -30,7 +29,7 @@ function App() {
               <HomePage />
             </Route>
             <Route path="/login">
-              <FormLogin />
+              <Login />
             </Route>
             <Route path="/product">
               <Product />
@@ -38,8 +37,8 @@ function App() {
             <Route path="/inventory">
               <Inventory />
             </Route>
-            <Route path="/profile">
-              <FormProfile />
+            <Route path="/signup">
+              <Signup />
             </Route>
             <Route path="/About">
               <AboutPage />
