@@ -1,102 +1,149 @@
 import React, { useState } from "react"
-import { ErrorMessage, Formik } from "formik"
+import { reach } from 'yup'
 import profileFormSchema from "../validation/profileFormSchema"
 import "../css/signup.css"
 
-const FormProfile = () => (
+const initialFormValues = {
+  sellerName: '',
+  email: '',
+  phoneNumber: '',
+  address: '',
+  username: '',
+  password: ''
+}
+
+const initialFormErrors = {
+  sellerName: '',
+  email: '',
+  phoneNumber: '',
+  address: '',
+  username: '',
+  password: ''
+}
+
+export default function FormProfile(props) {
+  
+  const [formValues, setFormValues] = useState(initialFormValues)
+  const [formErrors, setFormErrors] = useState(initialFormErrors)
+
+  const validate = (name, value) => {
+    reach(profileFormSchema, name)
+     .validate(value)
+     .then(() => setFormErrors({...formErrors, [name]: '' }))
+     .catch(err => setFormErrors({...formErrors, [name]: err.errors[0]}))
+  }
+
+  const inputChange = (name, value) => {
+      validate(name, value)
+      setFormValues({
+      ...formValues,
+      [name]: value 
+    })
+  }
+  
+  const onChange = evt => {
+    const { name, value} = evt.target
+    inputChange(name, value)
+  }
+  
+  const formSubmit = () => {
+    const newUser = {
+      sellerName: formValues.username.trim(),
+      email: formValues.email.trim(),
+      phoneNumber: formValues.phoneNumber.trim(),
+      address: formValues.address.trim(),
+      username: formValues.username.trim(),
+      password: formValues.password.trim()
+    }
+    setTimeout(() => {
+      alert(JSON.stringify(newUser, null, 2))
+    }, 1000)
+    setFormValues(initialFormValues)
+  }
+
+  const onSubmit = evt => {
+    evt.preventDefault()
+    formSubmit()
+  }
+  
+return (
   <div className="signUpMainDiv">
     <div className="signUpCard">
       <div className="signIn">Create Account</div>
-      <Formik
-        initialValues={{
-          sellerName: "",
-          username: "",
-          email: "",
-          phoneNumber: "",
-          address: "",
-          password: "",
-        }}
-        onSubmit={(values, { resetForm }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-          }, 1000)
-          resetForm()
-        }}
-        validationSchema={profileFormSchema}
-      >
-        {(props) => (
-          <form className="flex-column" onSubmit={props.handleSubmit}>
+      
+        
+          <form className="flex-column" onSubmit={onSubmit}>
             <label>
               {/* Name: */}
               <input
-                value={props.values.sellerName}
-                onChange={props.handleChange}
+                value={formValues.sellerName}
+                onChange={onChange}
                 name="sellerName"
                 type="text"
                 className="nameBox"
                 placeholder="☺ Name"
               />
-              <div>{props.errors.sellerName}</div>
+              <div>{formErrors.sellerName}</div>
             </label>
             <label>
               {/* Email: */}
               <input
-                value={props.values.email}
-                onChange={props.handleChange}
+                value={formValues.email}
+                onChange={onChange}
                 name="email"
                 type="email"
                 className="nameBox"
                 placeholder="✉ Email"
               />
-              <div>{props.errors.email}</div>
+              <div>{formErrors.email}</div>
             </label>
             <label>
               {/* Phone Number: */}
               <input
-                value={props.values.phoneNumber}
-                onChange={props.handleChange}
+                value={formValues.phoneNumber}
+                onChange={onChange}
                 name="phoneNumber"
                 type="tel"
                 className="nameBox"
                 placeholder="☏ Phone Number"
               />
-              <div>{props.errors.phoneNumber}</div>
+              <div>{formErrors.phoneNumber}</div>
             </label>
             <label>
               {/* Address: */}
               <input
-                value={props.values.address}
-                onChange={props.handleChange}
+                value={formValues.address}
+                onChange={onChange}
                 name="address"
                 type="address"
                 className="nameBox"
                 placeholder="⌂ Address"
               />
-              <div>{props.errors.address}</div>
+              <div>{formErrors.address}</div>
             </label>
             <label>
               {/* Seller ID: */}
               <input
-                value={props.values.username}
-                onChange={props.handleChange}
+                value={formValues.username}
+                onChange={onChange}
                 name="username"
                 type="text"
                 className="nameBox"
-                placeholder="♯ Seller ID"
+                placeholder="♯ Username"
               />
-              <div>{props.errors.username}</div>
+              <div>{formErrors.username}</div>
             </label>
             <label>
               {/* Password */}
               <input
-                value={props.values.password}
-                onChange={props.handleChange}
+                value={formValues.password}
+                onChange={onChange}
                 name="password"
                 type="password"
                 className="nameBox"
                 placeholder="☑ Password"
               />
-              <div>{props.errors.password}</div>
+              <div>{formErrors.password}</div>
             </label>
             <br />
             <div className="form-submit">
@@ -105,10 +152,10 @@ const FormProfile = () => (
               </button>
             </div>
           </form>
-        )}
-      </Formik>
+      
     </div>
   </div>
-)
+        )
+}
 
-export default FormProfile
+

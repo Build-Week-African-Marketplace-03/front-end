@@ -1,32 +1,54 @@
 import React, { useState, useEffect } from "react"
-import { Formik } from "formik"
-import loginSchema from "../validation/loginSchema"
 
-const FormLogin = () => (
+
+const initialFormValues = {
+  username: '',
+  password: ''
+}
+  
+
+export default function FormLogin(props)  {
+  const [formValues, setFormValues] = useState(initialFormValues)
+  
+  const inputChange = (name, value) => {
+      setFormValues({
+      ...formValues,
+      [name]: value 
+    })
+  }
+  
+  const onChange = evt => {
+    const { name, value} = evt.target
+    inputChange(name, value)
+  }
+  
+  const formSubmit = () => {
+    const login = {
+      username: formValues.username.trim(),
+      email: formValues.username.trim()
+    }
+    setTimeout(() => {
+      alert(JSON.stringify(login, null, 2))
+    }, 1000)
+    setFormValues(initialFormValues)
+  }
+
+  const onSubmit = evt => {
+    evt.preventDefault()
+    formSubmit()
+  }
+
+return (
   <div className="loginMainDiv signUpMainDiv">
     <div className="loginCard signUpCard">
       <div className="signIn signIn"> Login </div>
-      <Formik
-        initialValues={{
-          username: "",
-          password: "",
-        }}
-        onSubmit={(values, { resetForm }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-          }, 1000)
-          resetForm()
-        }}
-        validationSchema={loginSchema}
-      >
-        {(props) => (
-          <form onSubmit={props.handleSubmit}>
+      
+          <form onSubmit={onSubmit}>
             <div>
               <label>
-                {/* User Name: */}
                 <input
-                  value={props.values.username}
-                  onChange={props.handleChange}
+                  value={formValues.username}
+                  onChange={onChange}
                   name="username"
                   type="text"
                   className="nameBox"
@@ -36,10 +58,9 @@ const FormLogin = () => (
             </div>
             <div>
               <label>
-                {/* Password */}
                 <input
-                  value={props.values.password}
-                  onChange={props.handleChange}
+                  value={formValues.password}
+                  onChange={onChange}
                   name="password"
                   type="password"
                   className="nameBox"
@@ -51,10 +72,12 @@ const FormLogin = () => (
               Login
             </button>
           </form>
-        )}
-      </Formik>
+      
     </div>
   </div>
-)
+        )
+}
 
-export default FormLogin
+
+
+
