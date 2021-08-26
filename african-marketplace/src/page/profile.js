@@ -49,7 +49,7 @@ export default function Signup(props) {
 
   const formSubmit = () => {
     const newUser = {
-      sellerName: formValues.username.trim(),
+      sellerName: formValues.sellerName.trim(),
       email: formValues.email.trim(),
       phoneNumber: formValues.phoneNumber.trim(),
       address: formValues.address.trim(),
