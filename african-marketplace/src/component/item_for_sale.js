@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function ItemForSale(props) {
   const [stateCount, set_stateCount] = useState(0);

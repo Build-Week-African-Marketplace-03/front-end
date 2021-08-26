@@ -1,5 +1,5 @@
 import { Form } from "react-bootstrap"
-import React, { useState } from "react"
+import { useState } from "react";
 import { reach } from 'yup'
 import profileFormSchema from "../validation/profileFormSchema"
 import "../css/signup.css"

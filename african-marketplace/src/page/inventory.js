@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Form_Inventory_Sheet from "../component/form_inventory_sheet";
 import Form_Inventory_Add_Item from "../component/form_inventory_add_item";
 import { sample_items } from "../component/constant";
