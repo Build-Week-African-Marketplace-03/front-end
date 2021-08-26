@@ -1,5 +1,4 @@
 import React from "react"
-import Login from './login'
 import ButtonStyle from "../css/Button"
 import Button from "../css/Button"
 import "../css/Home.css"
