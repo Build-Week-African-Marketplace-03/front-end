@@ -28,25 +28,25 @@
   color: #61dafb;
 }
 
-header{
-  height:5vh;
+header {
+  height: 5vh;
 }
 
-footer{
-  height:5vh;
+footer {
+  height: 5vh;
 }
 
-main{
-  height:80vh;
+main {
+  height: 80vh;
 }
 
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

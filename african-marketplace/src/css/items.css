@@ -14,12 +14,15 @@
 .subtract {
   /* padding: 6px 10px; */
   /* margin: 5px; */
+
   border: none;
   border-radius: 10px;
   color: #a6bcd0;
-  /* background-color: #ff6961; */
-  font-weight: 550;
+  background-color: white;
   width: 30%;
+  font-size: 20px;
+  font-weight: 200;
+
   /* margin-top: 20px; */
 }
 
@@ -29,22 +32,27 @@
   border: none;
   border-radius: 50px;
   color: #a6bcd0;
-  background-color: none;
-  font-weight: 550;
+  background-color: white;
+  font-weight: 250;
   width: 30%;
+  font-size: 20px;
   /* margin-top: 20px; */
 }
 
 .addSubtractDiv {
   /* border: 1px solid black; */
+
   margin: auto;
   display: flex;
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
-  width: 80%;
+  width: 70%;
   /* margin-bottom: 10px;
   padding-bottom: 10px; */
-  height: 5vh;
+  height: 6vh;
   margin-top: 10vh;
+  vertical-align: middle;
+  font-size: 20px;
+  color: #748a9d;
 }

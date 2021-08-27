@@ -5,10 +5,10 @@
 .productMainDiv {
   padding-left: 100px;
   margin-top: 25px;
-  padding-top: 5%;
+  padding-top: 1%;
   padding-bottom: 5vh;
   margin-bottom: 10vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .topBar {
