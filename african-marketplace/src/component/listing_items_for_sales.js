@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 import { sample_items } from "./constant"
 import ItemForSale from "./item_for_sale"
