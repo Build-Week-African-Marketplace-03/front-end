@@ -1,0 +1,29 @@
+.contactMainDiv {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 2%;
+  padding-bottom: 5vh;
+  margin-bottom: 10vh;
+  height: 80vh;
+}
+h2 {
+  margin-top: 20px;
+  color: #748a9d;
+}
+.contactBG {
+  background-size: cover;
+  height: 65vh;
+  /* border: 1px solid red; */
+  width: 300px;
+  margin-left: 100px;
+}
+.rightContact {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  /* border: 1px solid red; */
+  height: 40vh;
+}
