@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import React, { useState } from "react"
 import "../css/items.css"
-=======
-import { useState } from "react";
->>>>>>> 1d2dedb588c5f08d3e72929e1497b1643f04ced1
 
 export default function ItemForSale(props) {
   const [stateCount, set_stateCount] = useState(0)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react"
 import "../css/about.css"
 
@@ -24,15 +23,6 @@ export default function AboutPage(props) {
         unlocking a new way for food entrepreneurs to make money and support
         their families.
       </div>
-=======
-export default function AboutPage(props) {
-  return (
-    <div>
-      <h2>About Page</h2>
-      <p>stuffffffffffflflflflflflfllflflflf
-        fkfkfkfkfkfkkfkfkfkfjhskksfjhsfhfksjf
-      </p>
->>>>>>> 1d2dedb588c5f08d3e72929e1497b1643f04ced1
     </div>
   )
 }
