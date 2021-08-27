@@ -86,7 +86,7 @@ export default function Form_Inventory_Add_Item(props) {
         <p>{stateError.input_text_name}</p>
       </label>
       <label>
-        Quanity:
+        Quantity:
         <input
           onChange={cb_onChange}
           name="input_number_quantity"
