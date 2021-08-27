@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-export default function Specific_Product(props) {
-  return (
-    <div style="background:blue">
-      <h3>Specific Product Page</h3>
-      <p>product_id = {props.input_productID}</p>
-    </div>
-  );
-}
+// export default function Specific_Product(props) {
+//   return (
+//     <div style="background:blue">
+//       <h3>Specific Product Page</h3>
+//       <p>product_id = {props.input_productID}</p>
+//     </div>
+//   );
+// }
 
 /*
 

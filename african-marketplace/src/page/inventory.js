@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Form_Inventory_Sheet from "../component/form_inventory_sheet";
 import Form_Inventory_Add_Item from "../component/form_inventory_add_item";
 import { sample_items } from "../component/constant";
+
+
 export default function Inventory(props) {
   const [stateNewItem, set_stateItem] = useState(null);
   const [stateModifiedItem, set_modifiedItem] = useState(null);
@@ -10,9 +12,9 @@ export default function Inventory(props) {
   const [statePendingDeleteItem, set_statePendingDeleteItem] = useState(null);
 
   /**
-   * cb_get_new_object add a key pair value to an object
+   * getNewObject add a key pair value to an object
    */
-  const cb_get_new_object = () => {
+  const getNewObject = () => {
     if (stateNewItem) {
       const temp_object = stateNewItem;
       //add a new key pair value
@@ -86,12 +88,12 @@ export default function Inventory(props) {
       //if stateItem is not null
       if (stateNewItem) {
         //push item into an array
-        set_stateArrayItems([...stateArrayItems, cb_get_new_object()]);
+        set_stateArrayItems([...stateArrayItems, getNewObject()]);
         //reset stateItem to null
         set_stateItem(null);
       }
     },
-    //call ueseEffect when the state of stateItem change
+    //call uesEffect when the state of stateItem change
     [stateNewItem]
   );
 

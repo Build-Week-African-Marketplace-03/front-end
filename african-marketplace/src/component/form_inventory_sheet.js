@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import Form_Inventory_Edit_Item from "./form_inventory_edit_item";
 
 export default function Form_Inventory_Sheet(props) {
@@ -39,13 +37,13 @@ export default function Form_Inventory_Sheet(props) {
 return (
     <div>
       <label>Name</label>
-      
+
     </div>
 
     {Array.from(props.input_arrayItems).map((object) => {
       return <Form_Item input_object={object} />;
     })}
-      
+
   );
 
 */

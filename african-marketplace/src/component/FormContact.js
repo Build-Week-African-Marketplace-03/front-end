@@ -1,4 +1,3 @@
-import React from "react"
 import { Formik } from "formik"
 import contactSchema from "../validation/contactSchema"
 import "../css/contact.css"

@@ -6,50 +6,34 @@ import Footer from "./component/footer"
 import AboutPage from "./page/about"
 import Product from "./page/product"
 import Inventory from "./page/inventory"
-import ProfilePage from "./page/profile"
+import Signup from "./page/profile"
 import ContactPage from "./page/contact"
 import Specific_Product from "./page/specific_product"
-import { BrowserRouter, Route, Switch } from "react-router-dom"
-import React from "react"
-import FormLogin from "./component/FormLogin"
-import FormProfile from "./component/FormProfile"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Login from './page/login'
 import FormContact from "./component/FormContact"
+import PrivateRoute from './utilities/PrivateRoute'
+
 
 function App() {
+
   return (
     <div className="App">
       <header>
         <NavigationBar />
       </header>
       <main>
-        <BrowserRouter>
+        <Router>
           <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route path="/login">
-              <FormLogin />
-            </Route>
-            <Route path="/product">
-              <Product />
-            </Route>
-            <Route path="/inventory">
-              <Inventory />
-            </Route>
-            <Route path="/profile">
-              <FormProfile />
-            </Route>
-            <Route path="/About">
-              <AboutPage />
-            </Route>
-            <Route path="/Contact">
-              <FormContact />
-            </Route>
-            <Route>
-              <Page404 />
-            </Route>
+            <PrivateRoute path="/inventory" component={Inventory}/>
+            <Route path="/Contact" component={FormContact}/>
+            <Route path="/About" component={AboutPage}/>
+            <Route path="/signup" component={Signup}/>
+            <Route path="/product" component={Product}/>
+            <Route path="/login" component={Login}/>
+            <Route exact path="/" component={HomePage}/>  
           </Switch>
-        </BrowserRouter>
+        </Router>
       </main>
       <footer>
         <Footer />

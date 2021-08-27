@@ -1,8 +1,6 @@
-import React from "react"
-import FormLogin from "../component/FormLogin"
 import ButtonStyle from "../css/Button"
 import Button from "../css/Button"
-import "../css/home.css"
+import "../css/Home.css"
 
 export default function HomePage(props) {
   return (
