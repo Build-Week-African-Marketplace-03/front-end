@@ -2,20 +2,25 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  height: 500px;
+  height: 450px;
   margin-top: 4vh;
 }
 
 .loginCard {
-  justify-content: center;
   background-color: white;
-  max-height: 400px;
+  max-height: 600px;
   margin-top: 4vh;
+  width: 400px;
   border: none;
+  -webkit-box-shadow: -1px 1px 5px 9px rgb(250, 250, 250);
+  -moz-box-shadow: -1px 1px 5px 9px rgb(250, 250, 250);
+  box-shadow: -1px 1px 5px 9px rgb(250, 250, 250);
+  border-radius: 0px 0px 30px 30px;
 }
 
 .signUpCard {
   /* border: 1px solid black; */
+
   color: #707070;
   width: 400px;
   -webkit-box-shadow: -1px 1px 5px 9px rgb(250, 250, 250);
@@ -32,7 +37,6 @@
   margin-bottom: 5vh;
 }
 .submitSI {
-  margin-top: 20px;
   padding: 6px 10px;
   margin: 5px;
   border: none;
@@ -41,8 +45,20 @@
   background-color: #7bed8d;
   font-weight: 550;
   width: 80%;
+  margin-top: 20px;
 }
 
+.loginButton {
+  padding: 6px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  background-color: #7bed8d;
+  font-weight: 550;
+  width: 80%;
+  margin-top: 130px;
+}
 /*form input boxes */
 .nameBox {
   padding-right: 110px;

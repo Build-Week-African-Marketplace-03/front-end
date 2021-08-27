@@ -3,9 +3,9 @@ import { Formik } from "formik"
 import loginSchema from "../validation/loginSchema"
 
 const FormLogin = () => (
-  <div className="loginMainDiv signUpMainDiv">
-    <div className="loginCard signUpCard">
-      <div className="signIn signIn"> Login </div>
+  <div className=" signUpMainDiv">
+    <div className="loginCard ">
+      <div className="signIn"> Login </div>
       <Formik
         initialValues={{
           username: "",
@@ -47,7 +47,7 @@ const FormLogin = () => (
                 />
               </label>
             </div>
-            <button type="submit" className="submitSI">
+            <button type="submit" className="loginButton">
               Login
             </button>
           </form>
