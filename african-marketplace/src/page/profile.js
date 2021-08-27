@@ -3,26 +3,22 @@ import { useState } from "react";
 import { reach } from 'yup'
 import profileFormSchema from "../validation/profileFormSchema"
 import "../css/signup.css"
+import { useHistory } from "react-router";
+import axios from "axios";
 
 const initialFormValues = {
-  sellerName: '',
-  email: '',
-  phoneNumber: '',
-  address: '',
   username: '',
   password: ''
 }
 
 const initialFormErrors = {
-  sellerName: '',
-  email: '',
-  phoneNumber: '',
-  address: '',
   username: '',
   password: ''
 }
 
 export default function Signup(props) {
+
+  const { push } = useHistory();
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -47,24 +43,36 @@ export default function Signup(props) {
     inputChange(name, value)
   }
 
-  const formSubmit = () => {
-    const newUser = {
-      sellerName: formValues.sellerName.trim(),
-      email: formValues.email.trim(),
-      phoneNumber: formValues.phoneNumber.trim(),
-      address: formValues.address.trim(),
-      username: formValues.username.trim(),
-      password: formValues.password.trim()
-    }
-    setTimeout(() => {
-      alert(JSON.stringify(newUser, null, 2))
-    }, 1000)
-    setFormValues(initialFormValues)
+  // const formSubmit = () => {
+  //   const newUser = {
+  //     sellerName: formValues.sellerName.trim(),
+  //     email: formValues.email.trim(),
+  //     phoneNumber: formValues.phoneNumber.trim(),
+  //     address: formValues.address.trim(),
+  //     username: formValues.username.trim(),
+  //     password: formValues.password.trim()
+  //   }
+  //   setTimeout(() => {
+  //     alert(JSON.stringify(newUser, null, 2))
+  //   }, 1000)
+  //   setFormValues(initialFormValues)
+  // }
+
+  const newUser = () => {
+
+    axios.post('https://build-week-afrimark.herokuapp.com/api/auth/register', formValues)
+      .then(res => {
+        console.log('success', res)
+        push('/login')
+      })
+      .catch(err => console.log('error', err.message))
+
   }
 
   const onSubmit = evt => {
     evt.preventDefault()
-    formSubmit()
+    // formSubmit()
+    newUser()
   }
 
   return (
@@ -74,54 +82,6 @@ export default function Signup(props) {
 
 
         <form className="flex-column" onSubmit={onSubmit}>
-          <label>
-            {/* Name: */}
-            <input
-              value={formValues.sellerName}
-              onChange={onChange}
-              name="sellerName"
-              type="text"
-              className="nameBox"
-              placeholder="☺ Name"
-            />
-            <div>{formErrors.sellerName}</div>
-          </label>
-          <label>
-            {/* Email: */}
-            <input
-              value={formValues.email}
-              onChange={onChange}
-              name="email"
-              type="email"
-              className="nameBox"
-              placeholder="✉ Email"
-            />
-            <div>{formErrors.email}</div>
-          </label>
-          <label>
-            {/* Phone Number: */}
-            <input
-              value={formValues.phoneNumber}
-              onChange={onChange}
-              name="phoneNumber"
-              type="tel"
-              className="nameBox"
-              placeholder="☏ Phone Number"
-            />
-            <div>{formErrors.phoneNumber}</div>
-          </label>
-          <label>
-            {/* Address: */}
-            <input
-              value={formValues.address}
-              onChange={onChange}
-              name="address"
-              type="address"
-              className="nameBox"
-              placeholder="⌂ Address"
-            />
-            <div>{formErrors.address}</div>
-          </label>
           <label>
             {/* Seller ID: */}
             <input
