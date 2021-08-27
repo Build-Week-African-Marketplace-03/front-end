@@ -3,6 +3,8 @@ import { useState } from "react";
 import { reach } from 'yup'
 import profileFormSchema from "../validation/profileFormSchema"
 import "../css/signup.css"
+import { useHistory } from "react-router";
+import axios from "axios";
 
 const initialFormValues = {
   sellerName: '',
@@ -23,6 +25,7 @@ const initialFormErrors = {
 }
 
 export default function Signup(props) {
+  const { push } = useHistory();
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -61,10 +64,21 @@ export default function Signup(props) {
     }, 1000)
     setFormValues(initialFormValues)
   }
+  const newUser = (login) => {
+
+    axios.post('https://fakestoreapi.com/users', login)
+      .then(res => {
+        console.log('success', res)
+        push('/login')
+      })
+      .catch(err => console.log('error', err.message))
+
+  }
 
   const onSubmit = evt => {
     evt.preventDefault()
-    formSubmit()
+    // formSubmit()
+    newUser()
   }
 
   return (
